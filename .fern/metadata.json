@@ -1,0 +1,13 @@
+{
+  "cliVersion": "5.89.4",
+  "generatorName": "fernapi/fern-go-sdk",
+  "generatorVersion": "1.57.10",
+  "generatorConfig": {
+    "clientName": "MailchimpClient"
+  },
+  "originGitCommit": "384aaf6a41058d842e2bd8e463c291ffed6c8a46",
+  "originGitCommitIsDirty": false,
+  "invokedBy": "ci",
+  "ciProvider": "github",
+  "sdkVersion": "v0.0.117"
+}
