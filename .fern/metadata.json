@@ -5,9 +5,9 @@
   "generatorConfig": {
     "clientName": "MailchimpClient"
   },
-  "originGitCommit": "384aaf6a41058d842e2bd8e463c291ffed6c8a46",
+  "originGitCommit": "61a4b73c1f14346e5430b6f2be05983303242fb0",
   "originGitCommitIsDirty": false,
   "invokedBy": "ci",
   "ciProvider": "github",
-  "sdkVersion": "v0.0.117"
+  "sdkVersion": "v0.0.127"
 }
