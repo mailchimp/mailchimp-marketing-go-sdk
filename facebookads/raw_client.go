@@ -41,7 +41,7 @@ func (r *RawClient) Get(
 	baseURL := internal.ResolveBaseURL(
 		options.BaseURL,
 		r.baseURL,
-		"https://us1.api.mailchimp.com",
+		"https://api.mailchimp.com",
 	)
 	endpointURL := internal.EncodeURL(
 		baseURL+"/3.0/facebook-ads/%v",

@@ -55,7 +55,7 @@ func (c *Client) List(
 	baseURL := internal.ResolveBaseURL(
 		options.BaseURL,
 		c.baseURL,
-		"https://us1.api.mailchimp.com",
+		"https://api.mailchimp.com",
 	)
 	endpointURL := baseURL + "/3.0/batches"
 	queryParams, err := internal.QueryValues(request)

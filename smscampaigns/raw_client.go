@@ -41,7 +41,7 @@ func (r *RawClient) Create(
 	baseURL := internal.ResolveBaseURL(
 		options.BaseURL,
 		r.baseURL,
-		"https://us1.api.mailchimp.com",
+		"https://api.mailchimp.com",
 	)
 	endpointURL := baseURL + "/3.0/sms-campaigns"
 	headers := internal.MergeHeaders(
@@ -84,7 +84,7 @@ func (r *RawClient) Get(
 	baseURL := internal.ResolveBaseURL(
 		options.BaseURL,
 		r.baseURL,
-		"https://us1.api.mailchimp.com",
+		"https://api.mailchimp.com",
 	)
 	endpointURL := internal.EncodeURL(
 		baseURL+"/3.0/sms-campaigns/%v",
@@ -135,7 +135,7 @@ func (r *RawClient) Delete(
 	baseURL := internal.ResolveBaseURL(
 		options.BaseURL,
 		r.baseURL,
-		"https://us1.api.mailchimp.com",
+		"https://api.mailchimp.com",
 	)
 	endpointURL := internal.EncodeURL(
 		baseURL+"/3.0/sms-campaigns/%v",
@@ -177,7 +177,7 @@ func (r *RawClient) Update(
 	baseURL := internal.ResolveBaseURL(
 		options.BaseURL,
 		r.baseURL,
-		"https://us1.api.mailchimp.com",
+		"https://api.mailchimp.com",
 	)
 	endpointURL := internal.EncodeURL(
 		baseURL+"/3.0/sms-campaigns/%v",
@@ -223,7 +223,7 @@ func (r *RawClient) CreateActionCancelSend(
 	baseURL := internal.ResolveBaseURL(
 		options.BaseURL,
 		r.baseURL,
-		"https://us1.api.mailchimp.com",
+		"https://api.mailchimp.com",
 	)
 	endpointURL := internal.EncodeURL(
 		baseURL+"/3.0/sms-campaigns/%v/actions/cancel-send",
@@ -265,7 +265,7 @@ func (r *RawClient) CreateActionSchedule(
 	baseURL := internal.ResolveBaseURL(
 		options.BaseURL,
 		r.baseURL,
-		"https://us1.api.mailchimp.com",
+		"https://api.mailchimp.com",
 	)
 	endpointURL := internal.EncodeURL(
 		baseURL+"/3.0/sms-campaigns/%v/actions/schedule",
@@ -309,7 +309,7 @@ func (r *RawClient) CreateActionSend(
 	baseURL := internal.ResolveBaseURL(
 		options.BaseURL,
 		r.baseURL,
-		"https://us1.api.mailchimp.com",
+		"https://api.mailchimp.com",
 	)
 	endpointURL := internal.EncodeURL(
 		baseURL+"/3.0/sms-campaigns/%v/actions/send",
@@ -351,7 +351,7 @@ func (r *RawClient) GetContent(
 	baseURL := internal.ResolveBaseURL(
 		options.BaseURL,
 		r.baseURL,
-		"https://us1.api.mailchimp.com",
+		"https://api.mailchimp.com",
 	)
 	endpointURL := internal.EncodeURL(
 		baseURL+"/3.0/sms-campaigns/%v/content",
@@ -402,7 +402,7 @@ func (r *RawClient) UpsertContent(
 	baseURL := internal.ResolveBaseURL(
 		options.BaseURL,
 		r.baseURL,
-		"https://us1.api.mailchimp.com",
+		"https://api.mailchimp.com",
 	)
 	endpointURL := internal.EncodeURL(
 		baseURL+"/3.0/sms-campaigns/%v/content",

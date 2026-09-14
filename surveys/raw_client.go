@@ -41,7 +41,7 @@ func (r *RawClient) CreateListSurveyActionCreateEmail(
 	baseURL := internal.ResolveBaseURL(
 		options.BaseURL,
 		r.baseURL,
-		"https://us1.api.mailchimp.com",
+		"https://api.mailchimp.com",
 	)
 	endpointURL := internal.EncodeURL(
 		baseURL+"/3.0/lists/%v/surveys/%v/actions/create-email",
@@ -86,7 +86,7 @@ func (r *RawClient) CreateListSurveyActionPublish(
 	baseURL := internal.ResolveBaseURL(
 		options.BaseURL,
 		r.baseURL,
-		"https://us1.api.mailchimp.com",
+		"https://api.mailchimp.com",
 	)
 	endpointURL := internal.EncodeURL(
 		baseURL+"/3.0/lists/%v/surveys/%v/actions/publish",
@@ -131,7 +131,7 @@ func (r *RawClient) CreateListSurveyActionUnpublish(
 	baseURL := internal.ResolveBaseURL(
 		options.BaseURL,
 		r.baseURL,
-		"https://us1.api.mailchimp.com",
+		"https://api.mailchimp.com",
 	)
 	endpointURL := internal.EncodeURL(
 		baseURL+"/3.0/lists/%v/surveys/%v/actions/unpublish",

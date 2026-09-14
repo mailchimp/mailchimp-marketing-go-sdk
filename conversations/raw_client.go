@@ -41,7 +41,7 @@ func (r *RawClient) Get(
 	baseURL := internal.ResolveBaseURL(
 		options.BaseURL,
 		r.baseURL,
-		"https://us1.api.mailchimp.com",
+		"https://api.mailchimp.com",
 	)
 	endpointURL := internal.EncodeURL(
 		baseURL+"/3.0/conversations/%v",
@@ -92,7 +92,7 @@ func (r *RawClient) ListMessages(
 	baseURL := internal.ResolveBaseURL(
 		options.BaseURL,
 		r.baseURL,
-		"https://us1.api.mailchimp.com",
+		"https://api.mailchimp.com",
 	)
 	endpointURL := internal.EncodeURL(
 		baseURL+"/3.0/conversations/%v/messages",
@@ -143,7 +143,7 @@ func (r *RawClient) GetMessage(
 	baseURL := internal.ResolveBaseURL(
 		options.BaseURL,
 		r.baseURL,
-		"https://us1.api.mailchimp.com",
+		"https://api.mailchimp.com",
 	)
 	endpointURL := internal.EncodeURL(
 		baseURL+"/3.0/conversations/%v/messages/%v",

@@ -41,7 +41,7 @@ func (r *RawClient) Create(
 	baseURL := internal.ResolveBaseURL(
 		options.BaseURL,
 		r.baseURL,
-		"https://us1.api.mailchimp.com",
+		"https://api.mailchimp.com",
 	)
 	endpointURL := baseURL + "/3.0/campaigns"
 	headers := internal.MergeHeaders(
@@ -84,7 +84,7 @@ func (r *RawClient) Get(
 	baseURL := internal.ResolveBaseURL(
 		options.BaseURL,
 		r.baseURL,
-		"https://us1.api.mailchimp.com",
+		"https://api.mailchimp.com",
 	)
 	endpointURL := internal.EncodeURL(
 		baseURL+"/3.0/campaigns/%v",
@@ -135,7 +135,7 @@ func (r *RawClient) Delete(
 	baseURL := internal.ResolveBaseURL(
 		options.BaseURL,
 		r.baseURL,
-		"https://us1.api.mailchimp.com",
+		"https://api.mailchimp.com",
 	)
 	endpointURL := internal.EncodeURL(
 		baseURL+"/3.0/campaigns/%v",
@@ -177,7 +177,7 @@ func (r *RawClient) Update(
 	baseURL := internal.ResolveBaseURL(
 		options.BaseURL,
 		r.baseURL,
-		"https://us1.api.mailchimp.com",
+		"https://api.mailchimp.com",
 	)
 	endpointURL := internal.EncodeURL(
 		baseURL+"/3.0/campaigns/%v",
@@ -223,7 +223,7 @@ func (r *RawClient) CreateActionCancelSend(
 	baseURL := internal.ResolveBaseURL(
 		options.BaseURL,
 		r.baseURL,
-		"https://us1.api.mailchimp.com",
+		"https://api.mailchimp.com",
 	)
 	endpointURL := internal.EncodeURL(
 		baseURL+"/3.0/campaigns/%v/actions/cancel-send",
@@ -265,7 +265,7 @@ func (r *RawClient) CreateActionCreateResend(
 	baseURL := internal.ResolveBaseURL(
 		options.BaseURL,
 		r.baseURL,
-		"https://us1.api.mailchimp.com",
+		"https://api.mailchimp.com",
 	)
 	endpointURL := internal.EncodeURL(
 		baseURL+"/3.0/campaigns/%v/actions/create-resend",
@@ -311,7 +311,7 @@ func (r *RawClient) CreateActionPause(
 	baseURL := internal.ResolveBaseURL(
 		options.BaseURL,
 		r.baseURL,
-		"https://us1.api.mailchimp.com",
+		"https://api.mailchimp.com",
 	)
 	endpointURL := internal.EncodeURL(
 		baseURL+"/3.0/campaigns/%v/actions/pause",
@@ -353,7 +353,7 @@ func (r *RawClient) CreateActionReplicate(
 	baseURL := internal.ResolveBaseURL(
 		options.BaseURL,
 		r.baseURL,
-		"https://us1.api.mailchimp.com",
+		"https://api.mailchimp.com",
 	)
 	endpointURL := internal.EncodeURL(
 		baseURL+"/3.0/campaigns/%v/actions/replicate",
@@ -397,7 +397,7 @@ func (r *RawClient) CreateActionResume(
 	baseURL := internal.ResolveBaseURL(
 		options.BaseURL,
 		r.baseURL,
-		"https://us1.api.mailchimp.com",
+		"https://api.mailchimp.com",
 	)
 	endpointURL := internal.EncodeURL(
 		baseURL+"/3.0/campaigns/%v/actions/resume",
@@ -439,7 +439,7 @@ func (r *RawClient) CreateActionSchedule(
 	baseURL := internal.ResolveBaseURL(
 		options.BaseURL,
 		r.baseURL,
-		"https://us1.api.mailchimp.com",
+		"https://api.mailchimp.com",
 	)
 	endpointURL := internal.EncodeURL(
 		baseURL+"/3.0/campaigns/%v/actions/schedule",
@@ -483,7 +483,7 @@ func (r *RawClient) CreateActionSend(
 	baseURL := internal.ResolveBaseURL(
 		options.BaseURL,
 		r.baseURL,
-		"https://us1.api.mailchimp.com",
+		"https://api.mailchimp.com",
 	)
 	endpointURL := internal.EncodeURL(
 		baseURL+"/3.0/campaigns/%v/actions/send",
@@ -525,7 +525,7 @@ func (r *RawClient) CreateActionTest(
 	baseURL := internal.ResolveBaseURL(
 		options.BaseURL,
 		r.baseURL,
-		"https://us1.api.mailchimp.com",
+		"https://api.mailchimp.com",
 	)
 	endpointURL := internal.EncodeURL(
 		baseURL+"/3.0/campaigns/%v/actions/test",
@@ -569,7 +569,7 @@ func (r *RawClient) CreateActionUnschedule(
 	baseURL := internal.ResolveBaseURL(
 		options.BaseURL,
 		r.baseURL,
-		"https://us1.api.mailchimp.com",
+		"https://api.mailchimp.com",
 	)
 	endpointURL := internal.EncodeURL(
 		baseURL+"/3.0/campaigns/%v/actions/unschedule",
@@ -611,7 +611,7 @@ func (r *RawClient) GetContent(
 	baseURL := internal.ResolveBaseURL(
 		options.BaseURL,
 		r.baseURL,
-		"https://us1.api.mailchimp.com",
+		"https://api.mailchimp.com",
 	)
 	endpointURL := internal.EncodeURL(
 		baseURL+"/3.0/campaigns/%v/content",
@@ -662,7 +662,7 @@ func (r *RawClient) UpsertContent(
 	baseURL := internal.ResolveBaseURL(
 		options.BaseURL,
 		r.baseURL,
-		"https://us1.api.mailchimp.com",
+		"https://api.mailchimp.com",
 	)
 	endpointURL := internal.EncodeURL(
 		baseURL+"/3.0/campaigns/%v/content",
@@ -708,7 +708,7 @@ func (r *RawClient) ListFeedback(
 	baseURL := internal.ResolveBaseURL(
 		options.BaseURL,
 		r.baseURL,
-		"https://us1.api.mailchimp.com",
+		"https://api.mailchimp.com",
 	)
 	endpointURL := internal.EncodeURL(
 		baseURL+"/3.0/campaigns/%v/feedback",
@@ -759,7 +759,7 @@ func (r *RawClient) CreateFeedback(
 	baseURL := internal.ResolveBaseURL(
 		options.BaseURL,
 		r.baseURL,
-		"https://us1.api.mailchimp.com",
+		"https://api.mailchimp.com",
 	)
 	endpointURL := internal.EncodeURL(
 		baseURL+"/3.0/campaigns/%v/feedback",
@@ -805,7 +805,7 @@ func (r *RawClient) GetFeedback(
 	baseURL := internal.ResolveBaseURL(
 		options.BaseURL,
 		r.baseURL,
-		"https://us1.api.mailchimp.com",
+		"https://api.mailchimp.com",
 	)
 	endpointURL := internal.EncodeURL(
 		baseURL+"/3.0/campaigns/%v/feedback/%v",
@@ -857,7 +857,7 @@ func (r *RawClient) DeleteFeedback(
 	baseURL := internal.ResolveBaseURL(
 		options.BaseURL,
 		r.baseURL,
-		"https://us1.api.mailchimp.com",
+		"https://api.mailchimp.com",
 	)
 	endpointURL := internal.EncodeURL(
 		baseURL+"/3.0/campaigns/%v/feedback/%v",
@@ -900,7 +900,7 @@ func (r *RawClient) UpdateFeedback(
 	baseURL := internal.ResolveBaseURL(
 		options.BaseURL,
 		r.baseURL,
-		"https://us1.api.mailchimp.com",
+		"https://api.mailchimp.com",
 	)
 	endpointURL := internal.EncodeURL(
 		baseURL+"/3.0/campaigns/%v/feedback/%v",
@@ -947,7 +947,7 @@ func (r *RawClient) ListSendChecklist(
 	baseURL := internal.ResolveBaseURL(
 		options.BaseURL,
 		r.baseURL,
-		"https://us1.api.mailchimp.com",
+		"https://api.mailchimp.com",
 	)
 	endpointURL := internal.EncodeURL(
 		baseURL+"/3.0/campaigns/%v/send-checklist",
