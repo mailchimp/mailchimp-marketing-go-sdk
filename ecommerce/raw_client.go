@@ -40,7 +40,7 @@ func (r *RawClient) List(
 	baseURL := internal.ResolveBaseURL(
 		options.BaseURL,
 		r.baseURL,
-		"https://us1.api.mailchimp.com",
+		"https://api.mailchimp.com",
 	)
 	endpointURL := baseURL + "/3.0/ecommerce"
 	headers := internal.MergeHeaders(
@@ -81,7 +81,7 @@ func (r *RawClient) CreateStore(
 	baseURL := internal.ResolveBaseURL(
 		options.BaseURL,
 		r.baseURL,
-		"https://us1.api.mailchimp.com",
+		"https://api.mailchimp.com",
 	)
 	endpointURL := baseURL + "/3.0/ecommerce/stores"
 	headers := internal.MergeHeaders(
@@ -124,7 +124,7 @@ func (r *RawClient) GetStore(
 	baseURL := internal.ResolveBaseURL(
 		options.BaseURL,
 		r.baseURL,
-		"https://us1.api.mailchimp.com",
+		"https://api.mailchimp.com",
 	)
 	endpointURL := internal.EncodeURL(
 		baseURL+"/3.0/ecommerce/stores/%v",
@@ -175,7 +175,7 @@ func (r *RawClient) DeleteStore(
 	baseURL := internal.ResolveBaseURL(
 		options.BaseURL,
 		r.baseURL,
-		"https://us1.api.mailchimp.com",
+		"https://api.mailchimp.com",
 	)
 	endpointURL := internal.EncodeURL(
 		baseURL+"/3.0/ecommerce/stores/%v",
@@ -217,7 +217,7 @@ func (r *RawClient) UpdateStore(
 	baseURL := internal.ResolveBaseURL(
 		options.BaseURL,
 		r.baseURL,
-		"https://us1.api.mailchimp.com",
+		"https://api.mailchimp.com",
 	)
 	endpointURL := internal.EncodeURL(
 		baseURL+"/3.0/ecommerce/stores/%v",
@@ -263,7 +263,7 @@ func (r *RawClient) CreateStoreCart(
 	baseURL := internal.ResolveBaseURL(
 		options.BaseURL,
 		r.baseURL,
-		"https://us1.api.mailchimp.com",
+		"https://api.mailchimp.com",
 	)
 	endpointURL := internal.EncodeURL(
 		baseURL+"/3.0/ecommerce/stores/%v/carts",
@@ -309,7 +309,7 @@ func (r *RawClient) GetStoreCart(
 	baseURL := internal.ResolveBaseURL(
 		options.BaseURL,
 		r.baseURL,
-		"https://us1.api.mailchimp.com",
+		"https://api.mailchimp.com",
 	)
 	endpointURL := internal.EncodeURL(
 		baseURL+"/3.0/ecommerce/stores/%v/carts/%v",
@@ -361,7 +361,7 @@ func (r *RawClient) DeleteStoreCart(
 	baseURL := internal.ResolveBaseURL(
 		options.BaseURL,
 		r.baseURL,
-		"https://us1.api.mailchimp.com",
+		"https://api.mailchimp.com",
 	)
 	endpointURL := internal.EncodeURL(
 		baseURL+"/3.0/ecommerce/stores/%v/carts/%v",
@@ -404,7 +404,7 @@ func (r *RawClient) UpdateStoreCart(
 	baseURL := internal.ResolveBaseURL(
 		options.BaseURL,
 		r.baseURL,
-		"https://us1.api.mailchimp.com",
+		"https://api.mailchimp.com",
 	)
 	endpointURL := internal.EncodeURL(
 		baseURL+"/3.0/ecommerce/stores/%v/carts/%v",
@@ -451,7 +451,7 @@ func (r *RawClient) CreateStoreCartLine(
 	baseURL := internal.ResolveBaseURL(
 		options.BaseURL,
 		r.baseURL,
-		"https://us1.api.mailchimp.com",
+		"https://api.mailchimp.com",
 	)
 	endpointURL := internal.EncodeURL(
 		baseURL+"/3.0/ecommerce/stores/%v/carts/%v/lines",
@@ -498,7 +498,7 @@ func (r *RawClient) GetStoreCartLine(
 	baseURL := internal.ResolveBaseURL(
 		options.BaseURL,
 		r.baseURL,
-		"https://us1.api.mailchimp.com",
+		"https://api.mailchimp.com",
 	)
 	endpointURL := internal.EncodeURL(
 		baseURL+"/3.0/ecommerce/stores/%v/carts/%v/lines/%v",
@@ -551,7 +551,7 @@ func (r *RawClient) DeleteStoreCartLine(
 	baseURL := internal.ResolveBaseURL(
 		options.BaseURL,
 		r.baseURL,
-		"https://us1.api.mailchimp.com",
+		"https://api.mailchimp.com",
 	)
 	endpointURL := internal.EncodeURL(
 		baseURL+"/3.0/ecommerce/stores/%v/carts/%v/lines/%v",
@@ -595,7 +595,7 @@ func (r *RawClient) UpdateStoreCartLine(
 	baseURL := internal.ResolveBaseURL(
 		options.BaseURL,
 		r.baseURL,
-		"https://us1.api.mailchimp.com",
+		"https://api.mailchimp.com",
 	)
 	endpointURL := internal.EncodeURL(
 		baseURL+"/3.0/ecommerce/stores/%v/carts/%v/lines/%v",
@@ -643,7 +643,7 @@ func (r *RawClient) CreateStoreCustomer(
 	baseURL := internal.ResolveBaseURL(
 		options.BaseURL,
 		r.baseURL,
-		"https://us1.api.mailchimp.com",
+		"https://api.mailchimp.com",
 	)
 	endpointURL := internal.EncodeURL(
 		baseURL+"/3.0/ecommerce/stores/%v/customers",
@@ -689,7 +689,7 @@ func (r *RawClient) GetStoreCustomer(
 	baseURL := internal.ResolveBaseURL(
 		options.BaseURL,
 		r.baseURL,
-		"https://us1.api.mailchimp.com",
+		"https://api.mailchimp.com",
 	)
 	endpointURL := internal.EncodeURL(
 		baseURL+"/3.0/ecommerce/stores/%v/customers/%v",
@@ -741,7 +741,7 @@ func (r *RawClient) UpsertStoreCustomer(
 	baseURL := internal.ResolveBaseURL(
 		options.BaseURL,
 		r.baseURL,
-		"https://us1.api.mailchimp.com",
+		"https://api.mailchimp.com",
 	)
 	endpointURL := internal.EncodeURL(
 		baseURL+"/3.0/ecommerce/stores/%v/customers/%v",
@@ -788,7 +788,7 @@ func (r *RawClient) DeleteStoreCustomer(
 	baseURL := internal.ResolveBaseURL(
 		options.BaseURL,
 		r.baseURL,
-		"https://us1.api.mailchimp.com",
+		"https://api.mailchimp.com",
 	)
 	endpointURL := internal.EncodeURL(
 		baseURL+"/3.0/ecommerce/stores/%v/customers/%v",
@@ -831,7 +831,7 @@ func (r *RawClient) UpdateStoreCustomer(
 	baseURL := internal.ResolveBaseURL(
 		options.BaseURL,
 		r.baseURL,
-		"https://us1.api.mailchimp.com",
+		"https://api.mailchimp.com",
 	)
 	endpointURL := internal.EncodeURL(
 		baseURL+"/3.0/ecommerce/stores/%v/customers/%v",
@@ -878,7 +878,7 @@ func (r *RawClient) CreateStoreOrder(
 	baseURL := internal.ResolveBaseURL(
 		options.BaseURL,
 		r.baseURL,
-		"https://us1.api.mailchimp.com",
+		"https://api.mailchimp.com",
 	)
 	endpointURL := internal.EncodeURL(
 		baseURL+"/3.0/ecommerce/stores/%v/orders",
@@ -924,7 +924,7 @@ func (r *RawClient) GetStoreOrder(
 	baseURL := internal.ResolveBaseURL(
 		options.BaseURL,
 		r.baseURL,
-		"https://us1.api.mailchimp.com",
+		"https://api.mailchimp.com",
 	)
 	endpointURL := internal.EncodeURL(
 		baseURL+"/3.0/ecommerce/stores/%v/orders/%v",
@@ -976,7 +976,7 @@ func (r *RawClient) DeleteStoreOrder(
 	baseURL := internal.ResolveBaseURL(
 		options.BaseURL,
 		r.baseURL,
-		"https://us1.api.mailchimp.com",
+		"https://api.mailchimp.com",
 	)
 	endpointURL := internal.EncodeURL(
 		baseURL+"/3.0/ecommerce/stores/%v/orders/%v",
@@ -1019,7 +1019,7 @@ func (r *RawClient) UpdateStoreOrder(
 	baseURL := internal.ResolveBaseURL(
 		options.BaseURL,
 		r.baseURL,
-		"https://us1.api.mailchimp.com",
+		"https://api.mailchimp.com",
 	)
 	endpointURL := internal.EncodeURL(
 		baseURL+"/3.0/ecommerce/stores/%v/orders/%v",
@@ -1066,7 +1066,7 @@ func (r *RawClient) CreateStoreOrderLine(
 	baseURL := internal.ResolveBaseURL(
 		options.BaseURL,
 		r.baseURL,
-		"https://us1.api.mailchimp.com",
+		"https://api.mailchimp.com",
 	)
 	endpointURL := internal.EncodeURL(
 		baseURL+"/3.0/ecommerce/stores/%v/orders/%v/lines",
@@ -1113,7 +1113,7 @@ func (r *RawClient) GetStoreOrderLine(
 	baseURL := internal.ResolveBaseURL(
 		options.BaseURL,
 		r.baseURL,
-		"https://us1.api.mailchimp.com",
+		"https://api.mailchimp.com",
 	)
 	endpointURL := internal.EncodeURL(
 		baseURL+"/3.0/ecommerce/stores/%v/orders/%v/lines/%v",
@@ -1166,7 +1166,7 @@ func (r *RawClient) DeleteStoreOrderLine(
 	baseURL := internal.ResolveBaseURL(
 		options.BaseURL,
 		r.baseURL,
-		"https://us1.api.mailchimp.com",
+		"https://api.mailchimp.com",
 	)
 	endpointURL := internal.EncodeURL(
 		baseURL+"/3.0/ecommerce/stores/%v/orders/%v/lines/%v",
@@ -1210,7 +1210,7 @@ func (r *RawClient) UpdateStoreOrderLine(
 	baseURL := internal.ResolveBaseURL(
 		options.BaseURL,
 		r.baseURL,
-		"https://us1.api.mailchimp.com",
+		"https://api.mailchimp.com",
 	)
 	endpointURL := internal.EncodeURL(
 		baseURL+"/3.0/ecommerce/stores/%v/orders/%v/lines/%v",
@@ -1258,7 +1258,7 @@ func (r *RawClient) CreateStoreProduct(
 	baseURL := internal.ResolveBaseURL(
 		options.BaseURL,
 		r.baseURL,
-		"https://us1.api.mailchimp.com",
+		"https://api.mailchimp.com",
 	)
 	endpointURL := internal.EncodeURL(
 		baseURL+"/3.0/ecommerce/stores/%v/products",
@@ -1304,7 +1304,7 @@ func (r *RawClient) GetStoreProduct(
 	baseURL := internal.ResolveBaseURL(
 		options.BaseURL,
 		r.baseURL,
-		"https://us1.api.mailchimp.com",
+		"https://api.mailchimp.com",
 	)
 	endpointURL := internal.EncodeURL(
 		baseURL+"/3.0/ecommerce/stores/%v/products/%v",
@@ -1356,7 +1356,7 @@ func (r *RawClient) UpsertStoreProduct(
 	baseURL := internal.ResolveBaseURL(
 		options.BaseURL,
 		r.baseURL,
-		"https://us1.api.mailchimp.com",
+		"https://api.mailchimp.com",
 	)
 	endpointURL := internal.EncodeURL(
 		baseURL+"/3.0/ecommerce/stores/%v/products/%v",
@@ -1403,7 +1403,7 @@ func (r *RawClient) DeleteStoreProduct(
 	baseURL := internal.ResolveBaseURL(
 		options.BaseURL,
 		r.baseURL,
-		"https://us1.api.mailchimp.com",
+		"https://api.mailchimp.com",
 	)
 	endpointURL := internal.EncodeURL(
 		baseURL+"/3.0/ecommerce/stores/%v/products/%v",
@@ -1446,7 +1446,7 @@ func (r *RawClient) UpdateStoreProduct(
 	baseURL := internal.ResolveBaseURL(
 		options.BaseURL,
 		r.baseURL,
-		"https://us1.api.mailchimp.com",
+		"https://api.mailchimp.com",
 	)
 	endpointURL := internal.EncodeURL(
 		baseURL+"/3.0/ecommerce/stores/%v/products/%v",
@@ -1493,7 +1493,7 @@ func (r *RawClient) CreateStoreProductImage(
 	baseURL := internal.ResolveBaseURL(
 		options.BaseURL,
 		r.baseURL,
-		"https://us1.api.mailchimp.com",
+		"https://api.mailchimp.com",
 	)
 	endpointURL := internal.EncodeURL(
 		baseURL+"/3.0/ecommerce/stores/%v/products/%v/images",
@@ -1540,7 +1540,7 @@ func (r *RawClient) GetStoreProductImage(
 	baseURL := internal.ResolveBaseURL(
 		options.BaseURL,
 		r.baseURL,
-		"https://us1.api.mailchimp.com",
+		"https://api.mailchimp.com",
 	)
 	endpointURL := internal.EncodeURL(
 		baseURL+"/3.0/ecommerce/stores/%v/products/%v/images/%v",
@@ -1593,7 +1593,7 @@ func (r *RawClient) DeleteStoreProductImage(
 	baseURL := internal.ResolveBaseURL(
 		options.BaseURL,
 		r.baseURL,
-		"https://us1.api.mailchimp.com",
+		"https://api.mailchimp.com",
 	)
 	endpointURL := internal.EncodeURL(
 		baseURL+"/3.0/ecommerce/stores/%v/products/%v/images/%v",
@@ -1637,7 +1637,7 @@ func (r *RawClient) UpdateStoreProductImage(
 	baseURL := internal.ResolveBaseURL(
 		options.BaseURL,
 		r.baseURL,
-		"https://us1.api.mailchimp.com",
+		"https://api.mailchimp.com",
 	)
 	endpointURL := internal.EncodeURL(
 		baseURL+"/3.0/ecommerce/stores/%v/products/%v/images/%v",
@@ -1685,7 +1685,7 @@ func (r *RawClient) CreateStoreProductVariant(
 	baseURL := internal.ResolveBaseURL(
 		options.BaseURL,
 		r.baseURL,
-		"https://us1.api.mailchimp.com",
+		"https://api.mailchimp.com",
 	)
 	endpointURL := internal.EncodeURL(
 		baseURL+"/3.0/ecommerce/stores/%v/products/%v/variants",
@@ -1732,7 +1732,7 @@ func (r *RawClient) GetStoreProductVariant(
 	baseURL := internal.ResolveBaseURL(
 		options.BaseURL,
 		r.baseURL,
-		"https://us1.api.mailchimp.com",
+		"https://api.mailchimp.com",
 	)
 	endpointURL := internal.EncodeURL(
 		baseURL+"/3.0/ecommerce/stores/%v/products/%v/variants/%v",
@@ -1785,7 +1785,7 @@ func (r *RawClient) UpsertStoreProductVariant(
 	baseURL := internal.ResolveBaseURL(
 		options.BaseURL,
 		r.baseURL,
-		"https://us1.api.mailchimp.com",
+		"https://api.mailchimp.com",
 	)
 	endpointURL := internal.EncodeURL(
 		baseURL+"/3.0/ecommerce/stores/%v/products/%v/variants/%v",
@@ -1833,7 +1833,7 @@ func (r *RawClient) DeleteStoreProductVariant(
 	baseURL := internal.ResolveBaseURL(
 		options.BaseURL,
 		r.baseURL,
-		"https://us1.api.mailchimp.com",
+		"https://api.mailchimp.com",
 	)
 	endpointURL := internal.EncodeURL(
 		baseURL+"/3.0/ecommerce/stores/%v/products/%v/variants/%v",
@@ -1877,7 +1877,7 @@ func (r *RawClient) UpdateStoreProductVariant(
 	baseURL := internal.ResolveBaseURL(
 		options.BaseURL,
 		r.baseURL,
-		"https://us1.api.mailchimp.com",
+		"https://api.mailchimp.com",
 	)
 	endpointURL := internal.EncodeURL(
 		baseURL+"/3.0/ecommerce/stores/%v/products/%v/variants/%v",
@@ -1925,7 +1925,7 @@ func (r *RawClient) CreateStorePromoRule(
 	baseURL := internal.ResolveBaseURL(
 		options.BaseURL,
 		r.baseURL,
-		"https://us1.api.mailchimp.com",
+		"https://api.mailchimp.com",
 	)
 	endpointURL := internal.EncodeURL(
 		baseURL+"/3.0/ecommerce/stores/%v/promo-rules",
@@ -1971,7 +1971,7 @@ func (r *RawClient) GetStorePromoRule(
 	baseURL := internal.ResolveBaseURL(
 		options.BaseURL,
 		r.baseURL,
-		"https://us1.api.mailchimp.com",
+		"https://api.mailchimp.com",
 	)
 	endpointURL := internal.EncodeURL(
 		baseURL+"/3.0/ecommerce/stores/%v/promo-rules/%v",
@@ -2023,7 +2023,7 @@ func (r *RawClient) DeleteStorePromoRule(
 	baseURL := internal.ResolveBaseURL(
 		options.BaseURL,
 		r.baseURL,
-		"https://us1.api.mailchimp.com",
+		"https://api.mailchimp.com",
 	)
 	endpointURL := internal.EncodeURL(
 		baseURL+"/3.0/ecommerce/stores/%v/promo-rules/%v",
@@ -2066,7 +2066,7 @@ func (r *RawClient) UpdateStorePromoRule(
 	baseURL := internal.ResolveBaseURL(
 		options.BaseURL,
 		r.baseURL,
-		"https://us1.api.mailchimp.com",
+		"https://api.mailchimp.com",
 	)
 	endpointURL := internal.EncodeURL(
 		baseURL+"/3.0/ecommerce/stores/%v/promo-rules/%v",
@@ -2113,7 +2113,7 @@ func (r *RawClient) CreateStorePromoRulePromoCode(
 	baseURL := internal.ResolveBaseURL(
 		options.BaseURL,
 		r.baseURL,
-		"https://us1.api.mailchimp.com",
+		"https://api.mailchimp.com",
 	)
 	endpointURL := internal.EncodeURL(
 		baseURL+"/3.0/ecommerce/stores/%v/promo-rules/%v/promo-codes",
@@ -2160,7 +2160,7 @@ func (r *RawClient) GetStorePromoRulePromoCode(
 	baseURL := internal.ResolveBaseURL(
 		options.BaseURL,
 		r.baseURL,
-		"https://us1.api.mailchimp.com",
+		"https://api.mailchimp.com",
 	)
 	endpointURL := internal.EncodeURL(
 		baseURL+"/3.0/ecommerce/stores/%v/promo-rules/%v/promo-codes/%v",
@@ -2213,7 +2213,7 @@ func (r *RawClient) DeleteStorePromoRulePromoCode(
 	baseURL := internal.ResolveBaseURL(
 		options.BaseURL,
 		r.baseURL,
-		"https://us1.api.mailchimp.com",
+		"https://api.mailchimp.com",
 	)
 	endpointURL := internal.EncodeURL(
 		baseURL+"/3.0/ecommerce/stores/%v/promo-rules/%v/promo-codes/%v",
@@ -2257,7 +2257,7 @@ func (r *RawClient) UpdateStorePromoRulePromoCode(
 	baseURL := internal.ResolveBaseURL(
 		options.BaseURL,
 		r.baseURL,
-		"https://us1.api.mailchimp.com",
+		"https://api.mailchimp.com",
 	)
 	endpointURL := internal.EncodeURL(
 		baseURL+"/3.0/ecommerce/stores/%v/promo-rules/%v/promo-codes/%v",

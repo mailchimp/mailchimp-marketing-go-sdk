@@ -76,7 +76,7 @@ func (c *Client) ListChimpChatter(
 	baseURL := internal.ResolveBaseURL(
 		options.BaseURL,
 		c.baseURL,
-		"https://us1.api.mailchimp.com",
+		"https://api.mailchimp.com",
 	)
 	endpointURL := baseURL + "/3.0/activity-feed/chimp-chatter"
 	queryParams, err := internal.QueryValues(request)

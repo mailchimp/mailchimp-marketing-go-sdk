@@ -76,7 +76,7 @@ func (c *Client) ListFacebookAds(
 	baseURL := internal.ResolveBaseURL(
 		options.BaseURL,
 		c.baseURL,
-		"https://us1.api.mailchimp.com",
+		"https://api.mailchimp.com",
 	)
 	endpointURL := baseURL + "/3.0/reporting/facebook-ads"
 	queryParams, err := internal.QueryValues(request)
@@ -179,7 +179,7 @@ func (c *Client) ListFacebookAdEcommerceProductActivity(
 	baseURL := internal.ResolveBaseURL(
 		options.BaseURL,
 		c.baseURL,
-		"https://us1.api.mailchimp.com",
+		"https://api.mailchimp.com",
 	)
 	endpointURL := internal.EncodeURL(
 		baseURL+"/3.0/reporting/facebook-ads/%v/ecommerce-product-activity",
@@ -256,7 +256,7 @@ func (c *Client) ListLandingPages(
 	baseURL := internal.ResolveBaseURL(
 		options.BaseURL,
 		c.baseURL,
-		"https://us1.api.mailchimp.com",
+		"https://api.mailchimp.com",
 	)
 	endpointURL := baseURL + "/3.0/reporting/landing-pages"
 	queryParams, err := internal.QueryValues(request)
@@ -357,7 +357,7 @@ func (c *Client) ListSurveys(
 	baseURL := internal.ResolveBaseURL(
 		options.BaseURL,
 		c.baseURL,
-		"https://us1.api.mailchimp.com",
+		"https://api.mailchimp.com",
 	)
 	endpointURL := baseURL + "/3.0/reporting/surveys"
 	queryParams, err := internal.QueryValues(request)

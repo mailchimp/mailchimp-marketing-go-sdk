@@ -76,7 +76,7 @@ func (c *Client) ListOrders(
 	baseURL := internal.ResolveBaseURL(
 		options.BaseURL,
 		c.baseURL,
-		"https://us1.api.mailchimp.com",
+		"https://api.mailchimp.com",
 	)
 	endpointURL := baseURL + "/3.0/ecommerce/orders"
 	queryParams, err := internal.QueryValues(request)
@@ -150,7 +150,7 @@ func (c *Client) ListStores(
 	baseURL := internal.ResolveBaseURL(
 		options.BaseURL,
 		c.baseURL,
-		"https://us1.api.mailchimp.com",
+		"https://api.mailchimp.com",
 	)
 	endpointURL := baseURL + "/3.0/ecommerce/stores"
 	queryParams, err := internal.QueryValues(request)
@@ -337,7 +337,7 @@ func (c *Client) ListStoreCarts(
 	baseURL := internal.ResolveBaseURL(
 		options.BaseURL,
 		c.baseURL,
-		"https://us1.api.mailchimp.com",
+		"https://api.mailchimp.com",
 	)
 	endpointURL := internal.EncodeURL(
 		baseURL+"/3.0/ecommerce/stores/%v/carts",
@@ -549,7 +549,7 @@ func (c *Client) ListStoreCartLines(
 	baseURL := internal.ResolveBaseURL(
 		options.BaseURL,
 		c.baseURL,
-		"https://us1.api.mailchimp.com",
+		"https://api.mailchimp.com",
 	)
 	endpointURL := internal.EncodeURL(
 		baseURL+"/3.0/ecommerce/stores/%v/carts/%v/lines",
@@ -751,7 +751,7 @@ func (c *Client) ListStoreCustomers(
 	baseURL := internal.ResolveBaseURL(
 		options.BaseURL,
 		c.baseURL,
-		"https://us1.api.mailchimp.com",
+		"https://api.mailchimp.com",
 	)
 	endpointURL := internal.EncodeURL(
 		baseURL+"/3.0/ecommerce/stores/%v/customers",
@@ -972,7 +972,7 @@ func (c *Client) ListStoreOrders(
 	baseURL := internal.ResolveBaseURL(
 		options.BaseURL,
 		c.baseURL,
-		"https://us1.api.mailchimp.com",
+		"https://api.mailchimp.com",
 	)
 	endpointURL := internal.EncodeURL(
 		baseURL+"/3.0/ecommerce/stores/%v/orders",
@@ -1182,7 +1182,7 @@ func (c *Client) ListStoreOrderLines(
 	baseURL := internal.ResolveBaseURL(
 		options.BaseURL,
 		c.baseURL,
-		"https://us1.api.mailchimp.com",
+		"https://api.mailchimp.com",
 	)
 	endpointURL := internal.EncodeURL(
 		baseURL+"/3.0/ecommerce/stores/%v/orders/%v/lines",
@@ -1384,7 +1384,7 @@ func (c *Client) ListStoreProducts(
 	baseURL := internal.ResolveBaseURL(
 		options.BaseURL,
 		c.baseURL,
-		"https://us1.api.mailchimp.com",
+		"https://api.mailchimp.com",
 	)
 	endpointURL := internal.EncodeURL(
 		baseURL+"/3.0/ecommerce/stores/%v/products",
@@ -1620,7 +1620,7 @@ func (c *Client) ListStoreProductImages(
 	baseURL := internal.ResolveBaseURL(
 		options.BaseURL,
 		c.baseURL,
-		"https://us1.api.mailchimp.com",
+		"https://api.mailchimp.com",
 	)
 	endpointURL := internal.EncodeURL(
 		baseURL+"/3.0/ecommerce/stores/%v/products/%v/images",
@@ -1818,7 +1818,7 @@ func (c *Client) ListStoreProductVariants(
 	baseURL := internal.ResolveBaseURL(
 		options.BaseURL,
 		c.baseURL,
-		"https://us1.api.mailchimp.com",
+		"https://api.mailchimp.com",
 	)
 	endpointURL := internal.EncodeURL(
 		baseURL+"/3.0/ecommerce/stores/%v/products/%v/variants",
@@ -2046,7 +2046,7 @@ func (c *Client) ListStorePromoRules(
 	baseURL := internal.ResolveBaseURL(
 		options.BaseURL,
 		c.baseURL,
-		"https://us1.api.mailchimp.com",
+		"https://api.mailchimp.com",
 	)
 	endpointURL := internal.EncodeURL(
 		baseURL+"/3.0/ecommerce/stores/%v/promo-rules",
@@ -2244,7 +2244,7 @@ func (c *Client) ListStorePromoRulePromoCodes(
 	baseURL := internal.ResolveBaseURL(
 		options.BaseURL,
 		c.baseURL,
-		"https://us1.api.mailchimp.com",
+		"https://api.mailchimp.com",
 	)
 	endpointURL := internal.EncodeURL(
 		baseURL+"/3.0/ecommerce/stores/%v/promo-rules/%v/promo-codes",

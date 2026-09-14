@@ -3,9 +3,6 @@
 package client
 
 import (
-	fmt "fmt"
-
-	mailchimpmarketinggosdk "github.com/mailchimp/mailchimp-marketing-go-sdk"
 	accountexports "github.com/mailchimp/mailchimp-marketing-go-sdk/accountexports"
 	activityfeed "github.com/mailchimp/mailchimp-marketing-go-sdk/activityfeed"
 	authorizedapps "github.com/mailchimp/mailchimp-marketing-go-sdk/authorizedapps"
@@ -74,19 +71,6 @@ type MailchimpClient struct {
 
 func NewMailchimpClient(opts ...option.RequestOption) *MailchimpClient {
 	options := core.NewRequestOptions(opts...)
-	if options.ServerPrefix != "" {
-		serverPrefix := options.ServerPrefix
-		if serverPrefix == "" {
-			serverPrefix = "us1"
-		}
-		switch options.BaseURL {
-		case "", mailchimpmarketinggosdk.Environments.Default:
-			options.BaseURL = fmt.Sprintf(
-				"https://%s.api.mailchimp.com",
-				serverPrefix,
-			)
-		}
-	}
 	return &MailchimpClient{
 		Root:             root.NewClient(options),
 		AccountExports:   accountexports.NewClient(options),

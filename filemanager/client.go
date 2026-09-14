@@ -76,7 +76,7 @@ func (c *Client) ListFiles(
 	baseURL := internal.ResolveBaseURL(
 		options.BaseURL,
 		c.baseURL,
-		"https://us1.api.mailchimp.com",
+		"https://api.mailchimp.com",
 	)
 	endpointURL := baseURL + "/3.0/file-manager/files"
 	queryParams, err := internal.QueryValues(request)
@@ -259,7 +259,7 @@ func (c *Client) ListFolders(
 	baseURL := internal.ResolveBaseURL(
 		options.BaseURL,
 		c.baseURL,
-		"https://us1.api.mailchimp.com",
+		"https://api.mailchimp.com",
 	)
 	endpointURL := baseURL + "/3.0/file-manager/folders"
 	queryParams, err := internal.QueryValues(request)
@@ -444,7 +444,7 @@ func (c *Client) ListFolderFiles(
 	baseURL := internal.ResolveBaseURL(
 		options.BaseURL,
 		c.baseURL,
-		"https://us1.api.mailchimp.com",
+		"https://api.mailchimp.com",
 	)
 	endpointURL := internal.EncodeURL(
 		baseURL+"/3.0/file-manager/folders/%v/files",
