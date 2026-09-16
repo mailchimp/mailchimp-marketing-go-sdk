@@ -65,7 +65,7 @@ func (r *RequestOptions) cloneHeader() http.Header {
 	headers := r.HTTPHeader.Clone()
 	headers.Set("X-Fern-Language", "Go")
 	headers.Set("X-Fern-SDK-Name", "github.com/mailchimp/mailchimp-marketing-go-sdk")
-	headers.Set("X-Fern-SDK-Version", "v0.0.157")
+	headers.Set("X-Fern-SDK-Version", "v0.0.195")
 	return headers
 }
 
