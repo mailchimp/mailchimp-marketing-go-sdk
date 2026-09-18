@@ -404,6 +404,619 @@ client.ActivityFeed.ListChimpChatter(
 </dl>
 </details>
 
+## Audiences
+<details><summary><code>client.Audiences.GetAudienceContactList(AudienceID) -> *mailchimpmarketinggosdk.GetAudienceContactListResponse</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Get a list of omni-channel contacts for a given audience.
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```go
+request := &mailchimpmarketinggosdk.GetAudienceContactListRequest{
+    AudienceID: "audience_id",
+}
+client.Audiences.GetAudienceContactList(
+    context.TODO(),
+    request,
+)
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**audienceID:** `string` — The unique ID for the audience.
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**fields:** `*string` — A comma-separated list of fields to return. Reference parameters of sub-objects with dot notation.
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**excludeFields:** `*string` — A comma-separated list of fields to exclude. Reference parameters of sub-objects with dot notation.
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**count:** `*int` — The number of records to return. Default value is 10. Maximum value is 1000
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**cursor:** `*string` — Paginate through a collection of records by setting the `cursor` parameter to a `next_cursor` attribute returned by a previous request. Default value fetches the first "page" of results.
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**createdBefore:** `*time.Time` — Restricts the response to contacts created at or before the specified time (inclusive). Uses ISO 8601 format: 2025-04-23T15:41:36+00:00.
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**createdSince:** `*time.Time` — Restricts the response to contacts created after the specified time (exclusive). Uses ISO 8601 format: 2025-04-23T15:41:36+00:00.
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**updatedBefore:** `*time.Time` — Restricts the response to contacts updated at or before the specified time (inclusive). Uses ISO 8601 format: 2025-04-23T15:41:36+00:00.
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**updatedSince:** `*time.Time` — Restricts the response to contacts updated after the specified time (exclusive). Uses ISO 8601 format: 2025-04-23T15:41:36+00:00.
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**sortField:** `*mailchimpmarketinggosdk.GetAudienceContactListRequestSortField` — Specifies the field to sort the returned contacts by.
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**sortDir:** `*mailchimpmarketinggosdk.GetAudienceContactListRequestSortDir` — Determines the order direction for sorted results.
+    
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.Audiences.CreateAudienceContact(AudienceID, request) -> *mailchimpmarketinggosdk.AudiencesContact</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Create a new omni-channel contact for an audience.
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```go
+request := &mailchimpmarketinggosdk.CreateAudienceContactRequest{
+    AudienceID: "audience_id",
+}
+client.Audiences.CreateAudienceContact(
+    context.TODO(),
+    request,
+)
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**audienceID:** `string` — The unique ID for the audience.
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**mergeFieldValidationMode:** `*mailchimpmarketinggosdk.CreateAudienceContactRequestMergeFieldValidationMode` — Defines how merge field validation is handled. When set to `ignore_required_checks`, the API does not raise an error if required merge fields are missing from the request. When set to `strict`, the API enforces validation and returns an error if any required merge field is not provided. If this setting is omitted, `strict` is applied by default.
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**dataMode:** `*mailchimpmarketinggosdk.CreateAudienceContactRequestDataMode` — Indicates the data processing mode. In `historical` mode, contact data changes do not trigger automations or webhooks. In `live mode`, such changes do trigger them.
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**emailChannel:** `*mailchimpmarketinggosdk.CreateAudienceContactRequestEmailChannel` 
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**language:** `*string` — The contact's detected language.
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**mergeFields:** `map[string]*mailchimpmarketinggosdk.CreateAudienceContactRequestMergeFieldsValue` — A dictionary of merge fields where the keys are the merge tags. See the [Merge Fields documentation](https://mailchimp.com/developer/marketing/docs/merge-fields/#structure) for more about the structure.
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**smsChannel:** `*mailchimpmarketinggosdk.CreateAudienceContactRequestSmsChannel` 
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**tags:** `[]*mailchimpmarketinggosdk.CreateAudienceContactRequestTagsItem` — An array of tags to add to the contact. Accepts tag name strings or objects with name and status. This operation is append-only; existing tags will be preserved, and only new tags from this array will be added.
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**updateExisting:** `*bool` — If a contact already exists, update them instead of returning a conflict error. When `true` and a matching contact is found (by email or phone), the existing contact is updated with the provided channel data. Defaults to `false`.
+    
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.Audiences.GetAudienceContact(AudienceID, ContactID) -> *mailchimpmarketinggosdk.AudiencesContact</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Retrieve a specific omni-channel contact in an audience.
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```go
+request := &mailchimpmarketinggosdk.GetAudienceContactRequest{
+    AudienceID: "audience_id",
+    ContactID: "contact_id",
+}
+client.Audiences.GetAudienceContact(
+    context.TODO(),
+    request,
+)
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**audienceID:** `string` — The unique ID for the audience.
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**contactID:** `string` — A unique identifier for the contact, which can be a Mailchimp contact ID or a channel hash. A channel hash must follow the format email:[md5_hash] (where the hash is the MD5 of the lowercased email address) or sms:[sha256_hash] (where the hash is the SHA256 of the E.164-formatted phone number).
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**fields:** `*string` — A comma-separated list of fields to return. Reference parameters of sub-objects with dot notation.
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**excludeFields:** `*string` — A comma-separated list of fields to exclude. Reference parameters of sub-objects with dot notation.
+    
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.Audiences.PatchAudienceContact(AudienceID, ContactID, request) -> *mailchimpmarketinggosdk.AudiencesContact</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Update an existing omni-channel contact.
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```go
+request := &mailchimpmarketinggosdk.PatchAudienceContactRequest{
+    AudienceID: "audience_id",
+    ContactID: "contact_id",
+}
+client.Audiences.PatchAudienceContact(
+    context.TODO(),
+    request,
+)
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**audienceID:** `string` — The unique ID for the audience.
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**contactID:** `string` — The unique id for the contact.
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**mergeFieldValidationMode:** `*mailchimpmarketinggosdk.PatchAudienceContactRequestMergeFieldValidationMode` — Defines how merge field validation is handled. When set to `ignore_required_checks`, the API does not raise an error if required merge fields are missing from the request. When set to `strict`, the API enforces validation and returns an error if any required merge field is not provided. If this setting is omitted, `strict` is applied by default.
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**dataMode:** `*mailchimpmarketinggosdk.PatchAudienceContactRequestDataMode` — Indicates the data processing mode. In `historical` mode, contact data changes do not trigger automations or webhooks. In `live mode`, such changes do trigger them.
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**emailChannel:** `*mailchimpmarketinggosdk.PatchAudienceContactRequestEmailChannel` 
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**language:** `*string` — The contact's detected language.
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**mergeFields:** `map[string]*mailchimpmarketinggosdk.PatchAudienceContactRequestMergeFieldsValue` — A dictionary of merge fields where the keys are the merge tags. See the [Merge Fields documentation](https://mailchimp.com/developer/marketing/docs/merge-fields/#structure) for more about the structure.
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**smsChannel:** `*mailchimpmarketinggosdk.PatchAudienceContactRequestSmsChannel` 
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**tags:** `[]*mailchimpmarketinggosdk.PatchAudienceContactRequestTagsItem` — An array of tags to add to the contact. Accepts tag name strings or objects with name and status. This operation is append-only; existing tags will be preserved, and only new tags from this array will be added.
+    
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.Audiences.PostAudiencesContactsActionsArchive(AudienceID, ContactID) -> error</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Archives a Contact.
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```go
+request := &mailchimpmarketinggosdk.PostAudiencesContactsActionsArchiveRequest{
+    AudienceID: "audience_id",
+    ContactID: "contact_id",
+}
+client.Audiences.PostAudiencesContactsActionsArchive(
+    context.TODO(),
+    request,
+)
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**audienceID:** `string` — The unique ID for the audience.
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**contactID:** `string` — The unique id for the contact.
+    
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.Audiences.PostAudiencesContactsActionsForget(AudienceID, ContactID) -> error</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Forgets a Contact.
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```go
+request := &mailchimpmarketinggosdk.PostAudiencesContactsActionsForgetRequest{
+    AudienceID: "audience_id",
+    ContactID: "contact_id",
+}
+client.Audiences.PostAudiencesContactsActionsForget(
+    context.TODO(),
+    request,
+)
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**audienceID:** `string` — The unique ID for the audience.
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**contactID:** `string` — The unique id for the contact.
+    
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
 ## AuthorizedApps
 <details><summary><code>client.AuthorizedApps.List() -> *mailchimpmarketinggosdk.ListAuthorizedAppsResponse</code></summary>
 <dl>
@@ -1948,7 +2561,7 @@ client.BatchWebhooks.List(
 </dl>
 </details>
 
-<details><summary><code>client.BatchWebhooks.Create(request) -> *mailchimpmarketinggosdk.BatchWebhook</code></summary>
+<details><summary><code>client.BatchWebhooks.Create(request) -> *mailchimpmarketinggosdk.CreateBatchWebhooksResponse</code></summary>
 <dl>
 <dd>
 
@@ -20315,7 +20928,7 @@ client.Lists.ListWebhooks(
 </dl>
 </details>
 
-<details><summary><code>client.Lists.CreateWebhook(ListID, request) -> *mailchimpmarketinggosdk.ListWebhooks</code></summary>
+<details><summary><code>client.Lists.CreateWebhook(ListID, request) -> *mailchimpmarketinggosdk.CreateWebhookListsResponse</code></summary>
 <dl>
 <dd>
 

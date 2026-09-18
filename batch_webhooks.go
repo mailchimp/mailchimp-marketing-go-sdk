@@ -200,8 +200,7 @@ var (
 	batchWebhookFieldEnabled        = big.NewInt(1 << 1)
 	batchWebhookFieldID             = big.NewInt(1 << 2)
 	batchWebhookFieldSigningEnabled = big.NewInt(1 << 3)
-	batchWebhookFieldSigningSecret  = big.NewInt(1 << 4)
-	batchWebhookFieldURL            = big.NewInt(1 << 5)
+	batchWebhookFieldURL            = big.NewInt(1 << 4)
 )
 
 type BatchWebhook struct {
@@ -213,8 +212,6 @@ type BatchWebhook struct {
 	ID *string `json:"id,omitempty" url:"id,omitempty"`
 	// Whether outbound deliveries are HMAC-signed.
 	SigningEnabled *bool `json:"signing_enabled,omitempty" url:"signing_enabled,omitempty"`
-	// The HMAC signing secret. Returned exactly once at creation. This should be stored securely; if lost, delete and recreate the webhook to obtain a new secret.
-	SigningSecret *string `json:"signing_secret,omitempty" url:"signing_secret,omitempty"`
 	// A valid URL for the Webhook.
 	URL *string `json:"url,omitempty" url:"url,omitempty"`
 
@@ -251,13 +248,6 @@ func (b *BatchWebhook) GetSigningEnabled() *bool {
 		return nil
 	}
 	return b.SigningEnabled
-}
-
-func (b *BatchWebhook) GetSigningSecret() *string {
-	if b == nil {
-		return nil
-	}
-	return b.SigningSecret
 }
 
 func (b *BatchWebhook) GetURL() *string {
@@ -307,13 +297,6 @@ func (b *BatchWebhook) SetID(id *string) {
 func (b *BatchWebhook) SetSigningEnabled(signingEnabled *bool) {
 	b.SigningEnabled = signingEnabled
 	b.require(batchWebhookFieldSigningEnabled)
-}
-
-// SetSigningSecret sets the SigningSecret field and marks it as non-optional;
-// this prevents an empty or null value for this field from being omitted during serialization.
-func (b *BatchWebhook) SetSigningSecret(signingSecret *string) {
-	b.SigningSecret = signingSecret
-	b.require(batchWebhookFieldSigningSecret)
 }
 
 // SetURL sets the URL field and marks it as non-optional;
@@ -555,6 +538,176 @@ func NewBatchWebhookLinksItemItemMethodFromString(s string) (BatchWebhookLinksIt
 
 func (b BatchWebhookLinksItemItemMethod) Ptr() *BatchWebhookLinksItemItemMethod {
 	return &b
+}
+
+var (
+	createBatchWebhooksResponseFieldLinks          = big.NewInt(1 << 0)
+	createBatchWebhooksResponseFieldEnabled        = big.NewInt(1 << 1)
+	createBatchWebhooksResponseFieldID             = big.NewInt(1 << 2)
+	createBatchWebhooksResponseFieldSigningEnabled = big.NewInt(1 << 3)
+	createBatchWebhooksResponseFieldURL            = big.NewInt(1 << 4)
+	createBatchWebhooksResponseFieldSigningSecret  = big.NewInt(1 << 5)
+)
+
+type CreateBatchWebhooksResponse struct {
+	// A list of link types and descriptions for the API schema documents.
+	Links [][]*BatchWebhookLinksItemItem `json:"_links,omitempty" url:"_links,omitempty"`
+	// Whether the webhook receives requests or not.
+	Enabled *bool `json:"enabled,omitempty" url:"enabled,omitempty"`
+	// A string that uniquely identifies this Batch Webhook.
+	ID *string `json:"id,omitempty" url:"id,omitempty"`
+	// Whether outbound deliveries are HMAC-signed.
+	SigningEnabled *bool `json:"signing_enabled,omitempty" url:"signing_enabled,omitempty"`
+	// A valid URL for the Webhook.
+	URL *string `json:"url,omitempty" url:"url,omitempty"`
+	// The HMAC signing secret. Returned exactly once at creation. This should be stored securely; if lost, delete and recreate the webhook to obtain a new secret.
+	SigningSecret *string `json:"signing_secret,omitempty" url:"signing_secret,omitempty"`
+
+	// Private bitmask of fields set to an explicit value and therefore not to be omitted
+	explicitFields *big.Int `json:"-" url:"-"`
+
+	extraProperties map[string]interface{}
+	rawJSON         json.RawMessage
+}
+
+func (c *CreateBatchWebhooksResponse) GetLinks() [][]*BatchWebhookLinksItemItem {
+	if c == nil {
+		return nil
+	}
+	return c.Links
+}
+
+func (c *CreateBatchWebhooksResponse) GetEnabled() *bool {
+	if c == nil {
+		return nil
+	}
+	return c.Enabled
+}
+
+func (c *CreateBatchWebhooksResponse) GetID() *string {
+	if c == nil {
+		return nil
+	}
+	return c.ID
+}
+
+func (c *CreateBatchWebhooksResponse) GetSigningEnabled() *bool {
+	if c == nil {
+		return nil
+	}
+	return c.SigningEnabled
+}
+
+func (c *CreateBatchWebhooksResponse) GetURL() *string {
+	if c == nil {
+		return nil
+	}
+	return c.URL
+}
+
+func (c *CreateBatchWebhooksResponse) GetSigningSecret() *string {
+	if c == nil {
+		return nil
+	}
+	return c.SigningSecret
+}
+
+func (c *CreateBatchWebhooksResponse) GetExtraProperties() map[string]interface{} {
+	if c == nil {
+		return nil
+	}
+	return c.extraProperties
+}
+
+func (c *CreateBatchWebhooksResponse) require(field *big.Int) {
+	if c.explicitFields == nil {
+		c.explicitFields = big.NewInt(0)
+	}
+	c.explicitFields.Or(c.explicitFields, field)
+}
+
+// SetLinks sets the Links field and marks it as non-optional;
+// this prevents an empty or null value for this field from being omitted during serialization.
+func (c *CreateBatchWebhooksResponse) SetLinks(links [][]*BatchWebhookLinksItemItem) {
+	c.Links = links
+	c.require(createBatchWebhooksResponseFieldLinks)
+}
+
+// SetEnabled sets the Enabled field and marks it as non-optional;
+// this prevents an empty or null value for this field from being omitted during serialization.
+func (c *CreateBatchWebhooksResponse) SetEnabled(enabled *bool) {
+	c.Enabled = enabled
+	c.require(createBatchWebhooksResponseFieldEnabled)
+}
+
+// SetID sets the ID field and marks it as non-optional;
+// this prevents an empty or null value for this field from being omitted during serialization.
+func (c *CreateBatchWebhooksResponse) SetID(id *string) {
+	c.ID = id
+	c.require(createBatchWebhooksResponseFieldID)
+}
+
+// SetSigningEnabled sets the SigningEnabled field and marks it as non-optional;
+// this prevents an empty or null value for this field from being omitted during serialization.
+func (c *CreateBatchWebhooksResponse) SetSigningEnabled(signingEnabled *bool) {
+	c.SigningEnabled = signingEnabled
+	c.require(createBatchWebhooksResponseFieldSigningEnabled)
+}
+
+// SetURL sets the URL field and marks it as non-optional;
+// this prevents an empty or null value for this field from being omitted during serialization.
+func (c *CreateBatchWebhooksResponse) SetURL(url *string) {
+	c.URL = url
+	c.require(createBatchWebhooksResponseFieldURL)
+}
+
+// SetSigningSecret sets the SigningSecret field and marks it as non-optional;
+// this prevents an empty or null value for this field from being omitted during serialization.
+func (c *CreateBatchWebhooksResponse) SetSigningSecret(signingSecret *string) {
+	c.SigningSecret = signingSecret
+	c.require(createBatchWebhooksResponseFieldSigningSecret)
+}
+
+func (c *CreateBatchWebhooksResponse) UnmarshalJSON(data []byte) error {
+	type unmarshaler CreateBatchWebhooksResponse
+	var value unmarshaler
+	if err := json.Unmarshal(data, &value); err != nil {
+		return err
+	}
+	*c = CreateBatchWebhooksResponse(value)
+	extraProperties, err := internal.ExtractExtraProperties(data, *c)
+	if err != nil {
+		return err
+	}
+	c.extraProperties = extraProperties
+	c.rawJSON = json.RawMessage(data)
+	return nil
+}
+
+func (c *CreateBatchWebhooksResponse) MarshalJSON() ([]byte, error) {
+	type embed CreateBatchWebhooksResponse
+	var marshaler = struct {
+		embed
+	}{
+		embed: embed(*c),
+	}
+	explicitMarshaler := internal.HandleExplicitFields(marshaler, c.explicitFields)
+	return json.Marshal(explicitMarshaler)
+}
+
+func (c *CreateBatchWebhooksResponse) String() string {
+	if c == nil {
+		return "<nil>"
+	}
+	if len(c.rawJSON) > 0 {
+		if value, err := internal.StringifyJSON(c.rawJSON); err == nil {
+			return value
+		}
+	}
+	if value, err := internal.StringifyJSON(c); err == nil {
+		return value
+	}
+	return fmt.Sprintf("%#v", c)
 }
 
 // Manage webhooks for batch requests.

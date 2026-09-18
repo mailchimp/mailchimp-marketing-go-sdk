@@ -6596,9 +6596,8 @@ var (
 	listWebhooksFieldID             = big.NewInt(1 << 2)
 	listWebhooksFieldListID         = big.NewInt(1 << 3)
 	listWebhooksFieldSigningEnabled = big.NewInt(1 << 4)
-	listWebhooksFieldSigningSecret  = big.NewInt(1 << 5)
-	listWebhooksFieldSources        = big.NewInt(1 << 6)
-	listWebhooksFieldURL            = big.NewInt(1 << 7)
+	listWebhooksFieldSources        = big.NewInt(1 << 5)
+	listWebhooksFieldURL            = big.NewInt(1 << 6)
 )
 
 type ListWebhooks struct {
@@ -6612,8 +6611,6 @@ type ListWebhooks struct {
 	ListID *string `json:"list_id,omitempty" url:"list_id,omitempty"`
 	// Whether outbound deliveries are HMAC-signed.
 	SigningEnabled *bool `json:"signing_enabled,omitempty" url:"signing_enabled,omitempty"`
-	// The HMAC signing secret. Returned exactly once at creation. This should be stored securely; if lost, delete and recreate the webhook to obtain a new secret.
-	SigningSecret *string `json:"signing_secret,omitempty" url:"signing_secret,omitempty"`
 	// The possible sources of any events that can trigger the webhook and whether they are enabled.
 	Sources *ListWebhooksSources `json:"sources,omitempty" url:"sources,omitempty"`
 	// A valid URL for the Webhook.
@@ -6659,13 +6656,6 @@ func (l *ListWebhooks) GetSigningEnabled() *bool {
 		return nil
 	}
 	return l.SigningEnabled
-}
-
-func (l *ListWebhooks) GetSigningSecret() *string {
-	if l == nil {
-		return nil
-	}
-	return l.SigningSecret
 }
 
 func (l *ListWebhooks) GetSources() *ListWebhooksSources {
@@ -6729,13 +6719,6 @@ func (l *ListWebhooks) SetListID(listID *string) {
 func (l *ListWebhooks) SetSigningEnabled(signingEnabled *bool) {
 	l.SigningEnabled = signingEnabled
 	l.require(listWebhooksFieldSigningEnabled)
-}
-
-// SetSigningSecret sets the SigningSecret field and marks it as non-optional;
-// this prevents an empty or null value for this field from being omitted during serialization.
-func (l *ListWebhooks) SetSigningSecret(signingSecret *string) {
-	l.SigningSecret = signingSecret
-	l.require(listWebhooksFieldSigningSecret)
 }
 
 // SetSources sets the Sources field and marks it as non-optional;
@@ -18537,6 +18520,210 @@ func (c CreateSignupFormListsRequestStylesItemSelector) Ptr() *CreateSignupFormL
 	return &c
 }
 
+var (
+	createWebhookListsResponseFieldLinks          = big.NewInt(1 << 0)
+	createWebhookListsResponseFieldEvents         = big.NewInt(1 << 1)
+	createWebhookListsResponseFieldID             = big.NewInt(1 << 2)
+	createWebhookListsResponseFieldListID         = big.NewInt(1 << 3)
+	createWebhookListsResponseFieldSigningEnabled = big.NewInt(1 << 4)
+	createWebhookListsResponseFieldSources        = big.NewInt(1 << 5)
+	createWebhookListsResponseFieldURL            = big.NewInt(1 << 6)
+	createWebhookListsResponseFieldSigningSecret  = big.NewInt(1 << 7)
+)
+
+type CreateWebhookListsResponse struct {
+	// A list of link types and descriptions for the API schema documents.
+	Links []*ListWebhooksLinksItem `json:"_links,omitempty" url:"_links,omitempty"`
+	// The events that can trigger the webhook and whether they are enabled.
+	Events *ListWebhooksEvents `json:"events,omitempty" url:"events,omitempty"`
+	// An string that uniquely identifies this webhook.
+	ID *string `json:"id,omitempty" url:"id,omitempty"`
+	// The unique id for the list.
+	ListID *string `json:"list_id,omitempty" url:"list_id,omitempty"`
+	// Whether outbound deliveries are HMAC-signed.
+	SigningEnabled *bool `json:"signing_enabled,omitempty" url:"signing_enabled,omitempty"`
+	// The possible sources of any events that can trigger the webhook and whether they are enabled.
+	Sources *ListWebhooksSources `json:"sources,omitempty" url:"sources,omitempty"`
+	// A valid URL for the Webhook.
+	URL *string `json:"url,omitempty" url:"url,omitempty"`
+	// The HMAC signing secret. Returned exactly once at creation. This should be stored securely; if lost, delete and recreate the webhook to obtain a new secret.
+	SigningSecret *string `json:"signing_secret,omitempty" url:"signing_secret,omitempty"`
+
+	// Private bitmask of fields set to an explicit value and therefore not to be omitted
+	explicitFields *big.Int `json:"-" url:"-"`
+
+	extraProperties map[string]interface{}
+	rawJSON         json.RawMessage
+}
+
+func (c *CreateWebhookListsResponse) GetLinks() []*ListWebhooksLinksItem {
+	if c == nil {
+		return nil
+	}
+	return c.Links
+}
+
+func (c *CreateWebhookListsResponse) GetEvents() *ListWebhooksEvents {
+	if c == nil {
+		return nil
+	}
+	return c.Events
+}
+
+func (c *CreateWebhookListsResponse) GetID() *string {
+	if c == nil {
+		return nil
+	}
+	return c.ID
+}
+
+func (c *CreateWebhookListsResponse) GetListID() *string {
+	if c == nil {
+		return nil
+	}
+	return c.ListID
+}
+
+func (c *CreateWebhookListsResponse) GetSigningEnabled() *bool {
+	if c == nil {
+		return nil
+	}
+	return c.SigningEnabled
+}
+
+func (c *CreateWebhookListsResponse) GetSources() *ListWebhooksSources {
+	if c == nil {
+		return nil
+	}
+	return c.Sources
+}
+
+func (c *CreateWebhookListsResponse) GetURL() *string {
+	if c == nil {
+		return nil
+	}
+	return c.URL
+}
+
+func (c *CreateWebhookListsResponse) GetSigningSecret() *string {
+	if c == nil {
+		return nil
+	}
+	return c.SigningSecret
+}
+
+func (c *CreateWebhookListsResponse) GetExtraProperties() map[string]interface{} {
+	if c == nil {
+		return nil
+	}
+	return c.extraProperties
+}
+
+func (c *CreateWebhookListsResponse) require(field *big.Int) {
+	if c.explicitFields == nil {
+		c.explicitFields = big.NewInt(0)
+	}
+	c.explicitFields.Or(c.explicitFields, field)
+}
+
+// SetLinks sets the Links field and marks it as non-optional;
+// this prevents an empty or null value for this field from being omitted during serialization.
+func (c *CreateWebhookListsResponse) SetLinks(links []*ListWebhooksLinksItem) {
+	c.Links = links
+	c.require(createWebhookListsResponseFieldLinks)
+}
+
+// SetEvents sets the Events field and marks it as non-optional;
+// this prevents an empty or null value for this field from being omitted during serialization.
+func (c *CreateWebhookListsResponse) SetEvents(events *ListWebhooksEvents) {
+	c.Events = events
+	c.require(createWebhookListsResponseFieldEvents)
+}
+
+// SetID sets the ID field and marks it as non-optional;
+// this prevents an empty or null value for this field from being omitted during serialization.
+func (c *CreateWebhookListsResponse) SetID(id *string) {
+	c.ID = id
+	c.require(createWebhookListsResponseFieldID)
+}
+
+// SetListID sets the ListID field and marks it as non-optional;
+// this prevents an empty or null value for this field from being omitted during serialization.
+func (c *CreateWebhookListsResponse) SetListID(listID *string) {
+	c.ListID = listID
+	c.require(createWebhookListsResponseFieldListID)
+}
+
+// SetSigningEnabled sets the SigningEnabled field and marks it as non-optional;
+// this prevents an empty or null value for this field from being omitted during serialization.
+func (c *CreateWebhookListsResponse) SetSigningEnabled(signingEnabled *bool) {
+	c.SigningEnabled = signingEnabled
+	c.require(createWebhookListsResponseFieldSigningEnabled)
+}
+
+// SetSources sets the Sources field and marks it as non-optional;
+// this prevents an empty or null value for this field from being omitted during serialization.
+func (c *CreateWebhookListsResponse) SetSources(sources *ListWebhooksSources) {
+	c.Sources = sources
+	c.require(createWebhookListsResponseFieldSources)
+}
+
+// SetURL sets the URL field and marks it as non-optional;
+// this prevents an empty or null value for this field from being omitted during serialization.
+func (c *CreateWebhookListsResponse) SetURL(url *string) {
+	c.URL = url
+	c.require(createWebhookListsResponseFieldURL)
+}
+
+// SetSigningSecret sets the SigningSecret field and marks it as non-optional;
+// this prevents an empty or null value for this field from being omitted during serialization.
+func (c *CreateWebhookListsResponse) SetSigningSecret(signingSecret *string) {
+	c.SigningSecret = signingSecret
+	c.require(createWebhookListsResponseFieldSigningSecret)
+}
+
+func (c *CreateWebhookListsResponse) UnmarshalJSON(data []byte) error {
+	type unmarshaler CreateWebhookListsResponse
+	var value unmarshaler
+	if err := json.Unmarshal(data, &value); err != nil {
+		return err
+	}
+	*c = CreateWebhookListsResponse(value)
+	extraProperties, err := internal.ExtractExtraProperties(data, *c)
+	if err != nil {
+		return err
+	}
+	c.extraProperties = extraProperties
+	c.rawJSON = json.RawMessage(data)
+	return nil
+}
+
+func (c *CreateWebhookListsResponse) MarshalJSON() ([]byte, error) {
+	type embed CreateWebhookListsResponse
+	var marshaler = struct {
+		embed
+	}{
+		embed: embed(*c),
+	}
+	explicitMarshaler := internal.HandleExplicitFields(marshaler, c.explicitFields)
+	return json.Marshal(explicitMarshaler)
+}
+
+func (c *CreateWebhookListsResponse) String() string {
+	if c == nil {
+		return "<nil>"
+	}
+	if len(c.rawJSON) > 0 {
+		if value, err := internal.StringifyJSON(c.rawJSON); err == nil {
+			return value
+		}
+	}
+	if value, err := internal.StringifyJSON(c); err == nil {
+		return value
+	}
+	return fmt.Sprintf("%#v", c)
+}
+
 // A collection of abuse complaints for a specific list. An abuse complaint occurs when your recipient clicks to 'report spam' in their email program.
 var (
 	listAbuseReportsListsResponseFieldLinks        = big.NewInt(1 << 0)
@@ -22122,36 +22309,31 @@ func (l *ListLocationsListsResponseLocationsItem) String() string {
 type ListMemberActivityFeedListsRequestActivityFiltersItem string
 
 const (
-	ListMemberActivityFeedListsRequestActivityFiltersItemBounce                           ListMemberActivityFeedListsRequestActivityFiltersItem = "bounce"
-	ListMemberActivityFeedListsRequestActivityFiltersItemClick                            ListMemberActivityFeedListsRequestActivityFiltersItem = "click"
-	ListMemberActivityFeedListsRequestActivityFiltersItemConversation                     ListMemberActivityFeedListsRequestActivityFiltersItem = "conversation"
-	ListMemberActivityFeedListsRequestActivityFiltersItemEcommerceSignup                  ListMemberActivityFeedListsRequestActivityFiltersItem = "ecommerce_signup"
-	ListMemberActivityFeedListsRequestActivityFiltersItemEvent                            ListMemberActivityFeedListsRequestActivityFiltersItem = "event"
-	ListMemberActivityFeedListsRequestActivityFiltersItemWebEngagement                    ListMemberActivityFeedListsRequestActivityFiltersItem = "web_engagement"
-	ListMemberActivityFeedListsRequestActivityFiltersItemGenericSignup                    ListMemberActivityFeedListsRequestActivityFiltersItem = "generic_signup"
-	ListMemberActivityFeedListsRequestActivityFiltersItemLandingPageSignup                ListMemberActivityFeedListsRequestActivityFiltersItem = "landing_page_signup"
-	ListMemberActivityFeedListsRequestActivityFiltersItemMarketingPermission              ListMemberActivityFeedListsRequestActivityFiltersItem = "marketing_permission"
-	ListMemberActivityFeedListsRequestActivityFiltersItemNote                             ListMemberActivityFeedListsRequestActivityFiltersItem = "note"
-	ListMemberActivityFeedListsRequestActivityFiltersItemOpen                             ListMemberActivityFeedListsRequestActivityFiltersItem = "open"
-	ListMemberActivityFeedListsRequestActivityFiltersItemOrder                            ListMemberActivityFeedListsRequestActivityFiltersItem = "order"
-	ListMemberActivityFeedListsRequestActivityFiltersItemPostcardSent                     ListMemberActivityFeedListsRequestActivityFiltersItem = "postcard_sent"
-	ListMemberActivityFeedListsRequestActivityFiltersItemSent                             ListMemberActivityFeedListsRequestActivityFiltersItem = "sent"
-	ListMemberActivityFeedListsRequestActivityFiltersItemSignup                           ListMemberActivityFeedListsRequestActivityFiltersItem = "signup"
-	ListMemberActivityFeedListsRequestActivityFiltersItemSquatterSignup                   ListMemberActivityFeedListsRequestActivityFiltersItem = "squatter_signup"
-	ListMemberActivityFeedListsRequestActivityFiltersItemUnsub                            ListMemberActivityFeedListsRequestActivityFiltersItem = "unsub"
-	ListMemberActivityFeedListsRequestActivityFiltersItemWebsiteSignup                    ListMemberActivityFeedListsRequestActivityFiltersItem = "website_signup"
-	ListMemberActivityFeedListsRequestActivityFiltersItemSurveyResponse                   ListMemberActivityFeedListsRequestActivityFiltersItem = "survey_response"
-	ListMemberActivityFeedListsRequestActivityFiltersItemSmsBulkSent                      ListMemberActivityFeedListsRequestActivityFiltersItem = "sms_bulk_sent"
-	ListMemberActivityFeedListsRequestActivityFiltersItemInboxThread                      ListMemberActivityFeedListsRequestActivityFiltersItem = "inbox_thread"
-	ListMemberActivityFeedListsRequestActivityFiltersItemQboPaymentLink                   ListMemberActivityFeedListsRequestActivityFiltersItem = "qbo_payment_link"
-	ListMemberActivityFeedListsRequestActivityFiltersItemVideoCallTranscripts             ListMemberActivityFeedListsRequestActivityFiltersItem = "video_call_transcripts"
-	ListMemberActivityFeedListsRequestActivityFiltersItemWhatsappBulkSent                 ListMemberActivityFeedListsRequestActivityFiltersItem = "whatsapp_bulk_sent"
-	ListMemberActivityFeedListsRequestActivityFiltersItemWhatsappDelivered                ListMemberActivityFeedListsRequestActivityFiltersItem = "whatsapp_delivered"
-	ListMemberActivityFeedListsRequestActivityFiltersItemWhatsappLinkClick                ListMemberActivityFeedListsRequestActivityFiltersItem = "whatsapp_link_click"
-	ListMemberActivityFeedListsRequestActivityFiltersItemWhatsappSubscribe                ListMemberActivityFeedListsRequestActivityFiltersItem = "whatsapp_subscribe"
-	ListMemberActivityFeedListsRequestActivityFiltersItemWhatsappSubscriptionPhoneUpdated ListMemberActivityFeedListsRequestActivityFiltersItem = "whatsapp_subscription_phone_updated"
-	ListMemberActivityFeedListsRequestActivityFiltersItemWhatsappUnsubscribe              ListMemberActivityFeedListsRequestActivityFiltersItem = "whatsapp_unsubscribe"
-	ListMemberActivityFeedListsRequestActivityFiltersItemWhatsappUsedKeyword              ListMemberActivityFeedListsRequestActivityFiltersItem = "whatsapp_used_keyword"
+	ListMemberActivityFeedListsRequestActivityFiltersItemBounce               ListMemberActivityFeedListsRequestActivityFiltersItem = "bounce"
+	ListMemberActivityFeedListsRequestActivityFiltersItemClick                ListMemberActivityFeedListsRequestActivityFiltersItem = "click"
+	ListMemberActivityFeedListsRequestActivityFiltersItemConversation         ListMemberActivityFeedListsRequestActivityFiltersItem = "conversation"
+	ListMemberActivityFeedListsRequestActivityFiltersItemEcommerceSignup      ListMemberActivityFeedListsRequestActivityFiltersItem = "ecommerce_signup"
+	ListMemberActivityFeedListsRequestActivityFiltersItemEvent                ListMemberActivityFeedListsRequestActivityFiltersItem = "event"
+	ListMemberActivityFeedListsRequestActivityFiltersItemWebEngagement        ListMemberActivityFeedListsRequestActivityFiltersItem = "web_engagement"
+	ListMemberActivityFeedListsRequestActivityFiltersItemGenericSignup        ListMemberActivityFeedListsRequestActivityFiltersItem = "generic_signup"
+	ListMemberActivityFeedListsRequestActivityFiltersItemLandingPageSignup    ListMemberActivityFeedListsRequestActivityFiltersItem = "landing_page_signup"
+	ListMemberActivityFeedListsRequestActivityFiltersItemMarketingPermission  ListMemberActivityFeedListsRequestActivityFiltersItem = "marketing_permission"
+	ListMemberActivityFeedListsRequestActivityFiltersItemNote                 ListMemberActivityFeedListsRequestActivityFiltersItem = "note"
+	ListMemberActivityFeedListsRequestActivityFiltersItemOpen                 ListMemberActivityFeedListsRequestActivityFiltersItem = "open"
+	ListMemberActivityFeedListsRequestActivityFiltersItemOrder                ListMemberActivityFeedListsRequestActivityFiltersItem = "order"
+	ListMemberActivityFeedListsRequestActivityFiltersItemPostcardSent         ListMemberActivityFeedListsRequestActivityFiltersItem = "postcard_sent"
+	ListMemberActivityFeedListsRequestActivityFiltersItemSent                 ListMemberActivityFeedListsRequestActivityFiltersItem = "sent"
+	ListMemberActivityFeedListsRequestActivityFiltersItemSignup               ListMemberActivityFeedListsRequestActivityFiltersItem = "signup"
+	ListMemberActivityFeedListsRequestActivityFiltersItemSquatterSignup       ListMemberActivityFeedListsRequestActivityFiltersItem = "squatter_signup"
+	ListMemberActivityFeedListsRequestActivityFiltersItemUnsub                ListMemberActivityFeedListsRequestActivityFiltersItem = "unsub"
+	ListMemberActivityFeedListsRequestActivityFiltersItemWebsiteSignup        ListMemberActivityFeedListsRequestActivityFiltersItem = "website_signup"
+	ListMemberActivityFeedListsRequestActivityFiltersItemSurveyResponse       ListMemberActivityFeedListsRequestActivityFiltersItem = "survey_response"
+	ListMemberActivityFeedListsRequestActivityFiltersItemSmsBulkSent          ListMemberActivityFeedListsRequestActivityFiltersItem = "sms_bulk_sent"
+	ListMemberActivityFeedListsRequestActivityFiltersItemInboxThread          ListMemberActivityFeedListsRequestActivityFiltersItem = "inbox_thread"
+	ListMemberActivityFeedListsRequestActivityFiltersItemQboPaymentLink       ListMemberActivityFeedListsRequestActivityFiltersItem = "qbo_payment_link"
+	ListMemberActivityFeedListsRequestActivityFiltersItemVideoCallTranscripts ListMemberActivityFeedListsRequestActivityFiltersItem = "video_call_transcripts"
+	ListMemberActivityFeedListsRequestActivityFiltersItemWhatsappBulkSent     ListMemberActivityFeedListsRequestActivityFiltersItem = "whatsapp_bulk_sent"
+	ListMemberActivityFeedListsRequestActivityFiltersItemWhatsappDelivered    ListMemberActivityFeedListsRequestActivityFiltersItem = "whatsapp_delivered"
 )
 
 func NewListMemberActivityFeedListsRequestActivityFiltersItemFromString(s string) (ListMemberActivityFeedListsRequestActivityFiltersItem, error) {
@@ -22206,16 +22388,6 @@ func NewListMemberActivityFeedListsRequestActivityFiltersItemFromString(s string
 		return ListMemberActivityFeedListsRequestActivityFiltersItemWhatsappBulkSent, nil
 	case "whatsapp_delivered":
 		return ListMemberActivityFeedListsRequestActivityFiltersItemWhatsappDelivered, nil
-	case "whatsapp_link_click":
-		return ListMemberActivityFeedListsRequestActivityFiltersItemWhatsappLinkClick, nil
-	case "whatsapp_subscribe":
-		return ListMemberActivityFeedListsRequestActivityFiltersItemWhatsappSubscribe, nil
-	case "whatsapp_subscription_phone_updated":
-		return ListMemberActivityFeedListsRequestActivityFiltersItemWhatsappSubscriptionPhoneUpdated, nil
-	case "whatsapp_unsubscribe":
-		return ListMemberActivityFeedListsRequestActivityFiltersItemWhatsappUnsubscribe, nil
-	case "whatsapp_used_keyword":
-		return ListMemberActivityFeedListsRequestActivityFiltersItemWhatsappUsedKeyword, nil
 	}
 	var t ListMemberActivityFeedListsRequestActivityFiltersItem
 	return "", fmt.Errorf("%s is not a valid %T", s, t)

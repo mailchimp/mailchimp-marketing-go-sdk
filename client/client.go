@@ -5,6 +5,7 @@ package client
 import (
 	accountexports "github.com/mailchimp/mailchimp-marketing-go-sdk/accountexports"
 	activityfeed "github.com/mailchimp/mailchimp-marketing-go-sdk/activityfeed"
+	audiences "github.com/mailchimp/mailchimp-marketing-go-sdk/audiences"
 	authorizedapps "github.com/mailchimp/mailchimp-marketing-go-sdk/authorizedapps"
 	automations "github.com/mailchimp/mailchimp-marketing-go-sdk/automations"
 	batches "github.com/mailchimp/mailchimp-marketing-go-sdk/batches"
@@ -39,6 +40,7 @@ type MailchimpClient struct {
 	Root             *root.Client
 	AccountExports   *accountexports.Client
 	ActivityFeed     *activityfeed.Client
+	Audiences        *audiences.Client
 	AuthorizedApps   *authorizedapps.Client
 	Automations      *automations.Client
 	BatchWebhooks    *batchwebhooks.Client
@@ -75,6 +77,7 @@ func NewMailchimpClient(opts ...option.RequestOption) *MailchimpClient {
 		Root:             root.NewClient(options),
 		AccountExports:   accountexports.NewClient(options),
 		ActivityFeed:     activityfeed.NewClient(options),
+		Audiences:        audiences.NewClient(options),
 		AuthorizedApps:   authorizedapps.NewClient(options),
 		Automations:      automations.NewClient(options),
 		BatchWebhooks:    batchwebhooks.NewClient(options),

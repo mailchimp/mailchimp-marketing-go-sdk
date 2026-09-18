@@ -2644,7 +2644,7 @@ func (c *Client) CreateWebhook(
 	ctx context.Context,
 	request *mailchimpmarketinggosdk.CreateWebhookListsRequest,
 	opts ...option.RequestOption,
-) (*mailchimpmarketinggosdk.ListWebhooks, error) {
+) (*mailchimpmarketinggosdk.CreateWebhookListsResponse, error) {
 	response, err := c.WithRawResponse.CreateWebhook(
 		ctx,
 		request,

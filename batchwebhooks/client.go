@@ -126,7 +126,7 @@ func (c *Client) Create(
 	ctx context.Context,
 	request *mailchimpmarketinggosdk.CreateBatchWebhooksRequest,
 	opts ...option.RequestOption,
-) (*mailchimpmarketinggosdk.BatchWebhook, error) {
+) (*mailchimpmarketinggosdk.CreateBatchWebhooksResponse, error) {
 	response, err := c.WithRawResponse.Create(
 		ctx,
 		request,
