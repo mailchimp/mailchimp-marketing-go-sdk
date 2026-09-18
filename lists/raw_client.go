@@ -2513,7 +2513,7 @@ func (r *RawClient) CreateWebhook(
 	ctx context.Context,
 	request *mailchimpmarketinggosdk.CreateWebhookListsRequest,
 	opts ...option.RequestOption,
-) (*core.Response[*mailchimpmarketinggosdk.ListWebhooks], error) {
+) (*core.Response[*mailchimpmarketinggosdk.CreateWebhookListsResponse], error) {
 	options := core.NewRequestOptions(opts...)
 	baseURL := internal.ResolveBaseURL(
 		options.BaseURL,
@@ -2529,7 +2529,7 @@ func (r *RawClient) CreateWebhook(
 		options.ToHeader(),
 	)
 	headers.Add("Content-Type", "application/json")
-	var response *mailchimpmarketinggosdk.ListWebhooks
+	var response *mailchimpmarketinggosdk.CreateWebhookListsResponse
 	raw, err := r.caller.Call(
 		ctx,
 		&internal.CallParams{
@@ -2548,7 +2548,7 @@ func (r *RawClient) CreateWebhook(
 	if err != nil {
 		return nil, err
 	}
-	return &core.Response[*mailchimpmarketinggosdk.ListWebhooks]{
+	return &core.Response[*mailchimpmarketinggosdk.CreateWebhookListsResponse]{
 		StatusCode: raw.StatusCode,
 		Header:     raw.Header,
 		Body:       response,

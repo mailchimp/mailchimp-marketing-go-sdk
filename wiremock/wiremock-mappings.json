@@ -196,6 +196,234 @@
       "postServeActions": []
     },
     {
+      "id": "6b627637-df18-4c88-844f-efddbf6784df",
+      "name": "A collection of Audience Contacts - default",
+      "request": {
+        "urlPathTemplate": "/3.0/audiences/{audience_id}/contacts",
+        "method": "GET",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          }
+        },
+        "pathParameters": {
+          "audience_id": {
+            "equalTo": "audience_id"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": "{\n  \"contacts\": [\n    {\n      \"audience_id\": \"773280e405\",\n      \"created_at\": \"2024-01-15T09:30:00Z\",\n      \"email_channel\": {\n        \"email\": \"example@freddiemail.com\",\n        \"hashed_email\": \"9115d71ba28088047d342e3bcedacd0f\",\n        \"marketing_consent\": {\n          \"captured_at\": \"2024-01-15T10:30:00Z\"\n        }\n      },\n      \"id\": \"7CCF816ADF6CE1B11AE09BB024A02B9B\",\n      \"language\": \"\",\n      \"last_updated_at\": \"2024-01-15T09:30:00Z\",\n      \"merge_fields\": {\n        \"key\": {\n          \"addr1\": \"addr1\",\n          \"city\": \"city\",\n          \"state\": \"state\",\n          \"zip\": \"zip\"\n        }\n      },\n      \"sms_channel\": {\n        \"marketing_consent\": {\n          \"captured_at\": \"2024-01-15T10:30:00Z\"\n        },\n        \"sms_phone\": \"+14045550102\",\n        \"hashed_sms_phone\": \"0572084e1f8288816f02cdb7bd930c62400bc8aef510adfaa9eec2b995fa7609\"\n      },\n      \"status\": \"active\",\n      \"tags\": [\n        \"tags\"\n      ]\n    }\n  ],\n  \"next_cursor\": \"next_cursor\",\n  \"_links\": [\n    {\n      \"href\": \"href\",\n      \"method\": \"GET\",\n      \"rel\": \"rel\",\n      \"schema\": \"schema\",\n      \"targetSchema\": \"targetSchema\"\n    }\n  ]\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "6b627637-df18-4c88-844f-efddbf6784df",
+      "persistent": true,
+      "priority": 3,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "7dddd1c0-6865-4147-a4d9-9215aa00b165",
+      "name": "Add Contact - default",
+      "request": {
+        "urlPathTemplate": "/3.0/audiences/{audience_id}/contacts",
+        "method": "POST",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          }
+        },
+        "pathParameters": {
+          "audience_id": {
+            "equalTo": "audience_id"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": "{\n  \"audience_id\": \"773280e405\",\n  \"created_at\": \"2024-01-15T09:30:00Z\",\n  \"email_channel\": {\n    \"effective_subscription_status\": {\n      \"value\": \"subscribed\"\n    },\n    \"email\": \"example@freddiemail.com\",\n    \"hashed_email\": \"9115d71ba28088047d342e3bcedacd0f\",\n    \"marketing_consent\": {\n      \"status\": \"consented\",\n      \"captured_at\": \"2024-01-15T10:30:00Z\"\n    },\n    \"source\": {\n      \"name\": \"name\"\n    }\n  },\n  \"id\": \"7CCF816ADF6CE1B11AE09BB024A02B9B\",\n  \"language\": \"\",\n  \"last_updated_at\": \"2024-01-15T09:30:00Z\",\n  \"merge_fields\": {\n    \"key\": {\n      \"addr1\": \"addr1\",\n      \"addr2\": \"addr2\",\n      \"city\": \"city\",\n      \"state\": \"state\",\n      \"zip\": \"zip\",\n      \"country\": \"country\"\n    }\n  },\n  \"sms_channel\": {\n    \"effective_subscription_status\": {\n      \"value\": \"subscribed\"\n    },\n    \"marketing_consent\": {\n      \"status\": \"consented\",\n      \"captured_at\": \"2024-01-15T10:30:00Z\"\n    },\n    \"sms_phone\": \"+14045550102\",\n    \"source\": {\n      \"name\": \"name\"\n    },\n    \"hashed_sms_phone\": \"0572084e1f8288816f02cdb7bd930c62400bc8aef510adfaa9eec2b995fa7609\"\n  },\n  \"source\": {\n    \"name\": \"name\"\n  },\n  \"status\": \"active\",\n  \"tags\": [\n    \"tags\"\n  ]\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "7dddd1c0-6865-4147-a4d9-9215aa00b165",
+      "persistent": true,
+      "priority": 3,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "f43f7aac-e269-42c0-a215-f48900f7b66f",
+      "name": "Get a contact record - default",
+      "request": {
+        "urlPathTemplate": "/3.0/audiences/{audience_id}/contacts/{contact_id}",
+        "method": "GET",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          }
+        },
+        "pathParameters": {
+          "audience_id": {
+            "equalTo": "audience_id"
+          },
+          "contact_id": {
+            "equalTo": "contact_id"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": "{\n  \"audience_id\": \"773280e405\",\n  \"created_at\": \"2024-01-15T09:30:00Z\",\n  \"email_channel\": {\n    \"effective_subscription_status\": {\n      \"value\": \"subscribed\"\n    },\n    \"email\": \"example@freddiemail.com\",\n    \"hashed_email\": \"9115d71ba28088047d342e3bcedacd0f\",\n    \"marketing_consent\": {\n      \"status\": \"consented\",\n      \"captured_at\": \"2024-01-15T10:30:00Z\"\n    },\n    \"source\": {\n      \"name\": \"name\"\n    }\n  },\n  \"id\": \"7CCF816ADF6CE1B11AE09BB024A02B9B\",\n  \"language\": \"\",\n  \"last_updated_at\": \"2024-01-15T09:30:00Z\",\n  \"merge_fields\": {\n    \"key\": {\n      \"addr1\": \"addr1\",\n      \"addr2\": \"addr2\",\n      \"city\": \"city\",\n      \"state\": \"state\",\n      \"zip\": \"zip\",\n      \"country\": \"country\"\n    }\n  },\n  \"sms_channel\": {\n    \"effective_subscription_status\": {\n      \"value\": \"subscribed\"\n    },\n    \"marketing_consent\": {\n      \"status\": \"consented\",\n      \"captured_at\": \"2024-01-15T10:30:00Z\"\n    },\n    \"sms_phone\": \"+14045550102\",\n    \"source\": {\n      \"name\": \"name\"\n    },\n    \"hashed_sms_phone\": \"0572084e1f8288816f02cdb7bd930c62400bc8aef510adfaa9eec2b995fa7609\"\n  },\n  \"source\": {\n    \"name\": \"name\"\n  },\n  \"status\": \"active\",\n  \"tags\": [\n    \"tags\"\n  ]\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "f43f7aac-e269-42c0-a215-f48900f7b66f",
+      "persistent": true,
+      "priority": 3,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "ff9e86de-6613-4763-ab31-465afaf2a227",
+      "name": "Update Contact - default",
+      "request": {
+        "urlPathTemplate": "/3.0/audiences/{audience_id}/contacts/{contact_id}",
+        "method": "PATCH",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          }
+        },
+        "pathParameters": {
+          "audience_id": {
+            "equalTo": "audience_id"
+          },
+          "contact_id": {
+            "equalTo": "contact_id"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": "{\n  \"audience_id\": \"773280e405\",\n  \"created_at\": \"2024-01-15T09:30:00Z\",\n  \"email_channel\": {\n    \"effective_subscription_status\": {\n      \"value\": \"subscribed\"\n    },\n    \"email\": \"example@freddiemail.com\",\n    \"hashed_email\": \"9115d71ba28088047d342e3bcedacd0f\",\n    \"marketing_consent\": {\n      \"status\": \"consented\",\n      \"captured_at\": \"2024-01-15T10:30:00Z\"\n    },\n    \"source\": {\n      \"name\": \"name\"\n    }\n  },\n  \"id\": \"7CCF816ADF6CE1B11AE09BB024A02B9B\",\n  \"language\": \"\",\n  \"last_updated_at\": \"2024-01-15T09:30:00Z\",\n  \"merge_fields\": {\n    \"key\": {\n      \"addr1\": \"addr1\",\n      \"addr2\": \"addr2\",\n      \"city\": \"city\",\n      \"state\": \"state\",\n      \"zip\": \"zip\",\n      \"country\": \"country\"\n    }\n  },\n  \"sms_channel\": {\n    \"effective_subscription_status\": {\n      \"value\": \"subscribed\"\n    },\n    \"marketing_consent\": {\n      \"status\": \"consented\",\n      \"captured_at\": \"2024-01-15T10:30:00Z\"\n    },\n    \"sms_phone\": \"+14045550102\",\n    \"source\": {\n      \"name\": \"name\"\n    },\n    \"hashed_sms_phone\": \"0572084e1f8288816f02cdb7bd930c62400bc8aef510adfaa9eec2b995fa7609\"\n  },\n  \"source\": {\n    \"name\": \"name\"\n  },\n  \"status\": \"active\",\n  \"tags\": [\n    \"tags\"\n  ]\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "ff9e86de-6613-4763-ab31-465afaf2a227",
+      "persistent": true,
+      "priority": 3,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "25969100-1db8-47ff-b5d6-0ed5c75b80ef",
+      "name": "Archive Contact - default",
+      "request": {
+        "urlPathTemplate": "/3.0/audiences/{audience_id}/contacts/{contact_id}/actions/archive",
+        "method": "POST",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          }
+        },
+        "pathParameters": {
+          "audience_id": {
+            "equalTo": "audience_id"
+          },
+          "contact_id": {
+            "equalTo": "contact_id"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": "\"\"",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "25969100-1db8-47ff-b5d6-0ed5c75b80ef",
+      "persistent": true,
+      "priority": 3,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "ce4fab81-6a14-4704-85b1-c5e24f9b5574",
+      "name": "Forget Contact - default",
+      "request": {
+        "urlPathTemplate": "/3.0/audiences/{audience_id}/contacts/{contact_id}/actions/forget",
+        "method": "POST",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          }
+        },
+        "pathParameters": {
+          "audience_id": {
+            "equalTo": "audience_id"
+          },
+          "contact_id": {
+            "equalTo": "contact_id"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": "\"\"",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "ce4fab81-6a14-4704-85b1-c5e24f9b5574",
+      "persistent": true,
+      "priority": 3,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
       "id": "b8338577-7e3f-4aa3-a765-dde255c32bfc",
       "name": "List authorized apps - default",
       "request": {
@@ -946,7 +1174,7 @@
       },
       "response": {
         "status": 200,
-        "body": "{\n  \"_links\": [\n    {\n      \"href\": \"href\",\n      \"method\": \"GET\",\n      \"rel\": \"rel\",\n      \"schema\": \"schema\",\n      \"targetSchema\": \"targetSchema\"\n    }\n  ],\n  \"total_items\": 1,\n  \"webhooks\": [\n    {\n      \"_links\": [\n        [\n          {}\n        ]\n      ],\n      \"enabled\": true,\n      \"id\": \"id\",\n      \"signing_enabled\": true,\n      \"signing_secret\": \"zI3tsLziqBWhlz6V4PRlGg41u0gdhu7LhYXX4wa0ARM\",\n      \"url\": \"http://yourdomain.com/webhook\"\n    }\n  ]\n}",
+        "body": "{\n  \"_links\": [\n    {\n      \"href\": \"href\",\n      \"method\": \"GET\",\n      \"rel\": \"rel\",\n      \"schema\": \"schema\",\n      \"targetSchema\": \"targetSchema\"\n    }\n  ],\n  \"total_items\": 1,\n  \"webhooks\": [\n    {\n      \"_links\": [\n        [\n          {}\n        ]\n      ],\n      \"enabled\": true,\n      \"id\": \"id\",\n      \"signing_enabled\": true,\n      \"url\": \"http://yourdomain.com/webhook\"\n    }\n  ]\n}",
         "headers": {
           "Content-Type": "application/json"
         }
@@ -978,7 +1206,7 @@
       },
       "response": {
         "status": 200,
-        "body": "{\n  \"_links\": [\n    [\n      {}\n    ]\n  ],\n  \"enabled\": true,\n  \"id\": \"id\",\n  \"signing_enabled\": true,\n  \"signing_secret\": \"zI3tsLziqBWhlz6V4PRlGg41u0gdhu7LhYXX4wa0ARM\",\n  \"url\": \"http://yourdomain.com/webhook\"\n}",
+        "body": "{\n  \"_links\": [\n    [\n      {}\n    ]\n  ],\n  \"enabled\": true,\n  \"id\": \"id\",\n  \"signing_enabled\": true,\n  \"url\": \"http://yourdomain.com/webhook\",\n  \"signing_secret\": \"zI3tsLziqBWhlz6V4PRlGg41u0gdhu7LhYXX4wa0ARM\"\n}",
         "headers": {
           "Content-Type": "application/json"
         }
@@ -1014,7 +1242,7 @@
       },
       "response": {
         "status": 200,
-        "body": "{\n  \"_links\": [\n    [\n      {}\n    ]\n  ],\n  \"enabled\": true,\n  \"id\": \"id\",\n  \"signing_enabled\": true,\n  \"signing_secret\": \"zI3tsLziqBWhlz6V4PRlGg41u0gdhu7LhYXX4wa0ARM\",\n  \"url\": \"http://yourdomain.com/webhook\"\n}",
+        "body": "{\n  \"_links\": [\n    [\n      {}\n    ]\n  ],\n  \"enabled\": true,\n  \"id\": \"id\",\n  \"signing_enabled\": true,\n  \"url\": \"http://yourdomain.com/webhook\"\n}",
         "headers": {
           "Content-Type": "application/json"
         }
@@ -1086,7 +1314,7 @@
       },
       "response": {
         "status": 200,
-        "body": "{\n  \"_links\": [\n    [\n      {}\n    ]\n  ],\n  \"enabled\": true,\n  \"id\": \"id\",\n  \"signing_enabled\": true,\n  \"signing_secret\": \"zI3tsLziqBWhlz6V4PRlGg41u0gdhu7LhYXX4wa0ARM\",\n  \"url\": \"http://yourdomain.com/webhook\"\n}",
+        "body": "{\n  \"_links\": [\n    [\n      {}\n    ]\n  ],\n  \"enabled\": true,\n  \"id\": \"id\",\n  \"signing_enabled\": true,\n  \"url\": \"http://yourdomain.com/webhook\"\n}",
         "headers": {
           "Content-Type": "application/json"
         }
@@ -8125,7 +8353,7 @@
       },
       "response": {
         "status": 200,
-        "body": "{\n  \"_links\": [\n    {\n      \"href\": \"href\",\n      \"method\": \"GET\",\n      \"rel\": \"rel\",\n      \"schema\": \"schema\",\n      \"targetSchema\": \"targetSchema\"\n    }\n  ],\n  \"list_id\": \"list_id\",\n  \"total_items\": 1,\n  \"webhooks\": [\n    {\n      \"_links\": [\n        {}\n      ],\n      \"events\": {\n        \"campaign\": true,\n        \"cleaned\": true,\n        \"profile\": true,\n        \"subscribe\": true,\n        \"unsubscribe\": true,\n        \"upemail\": true,\n        \"sms_subscribe\": true,\n        \"sms_unsubscribe\": true,\n        \"upsms\": true,\n        \"sms_campaign\": true\n      },\n      \"id\": \"5d9a5e3f7b\",\n      \"list_id\": \"4ca5becb8d\",\n      \"signing_enabled\": true,\n      \"signing_secret\": \"zI3tsLziqBWhlz6V4PRlGg41u0gdhu7LhYXX4wa0ARM\",\n      \"sources\": {\n        \"admin\": true,\n        \"api\": true,\n        \"user\": true\n      },\n      \"url\": \"http://yourdomain.com/webhook\"\n    }\n  ]\n}",
+        "body": "{\n  \"_links\": [\n    {\n      \"href\": \"href\",\n      \"method\": \"GET\",\n      \"rel\": \"rel\",\n      \"schema\": \"schema\",\n      \"targetSchema\": \"targetSchema\"\n    }\n  ],\n  \"list_id\": \"list_id\",\n  \"total_items\": 1,\n  \"webhooks\": [\n    {\n      \"_links\": [\n        {}\n      ],\n      \"events\": {\n        \"campaign\": true,\n        \"cleaned\": true,\n        \"profile\": true,\n        \"subscribe\": true,\n        \"unsubscribe\": true,\n        \"upemail\": true,\n        \"sms_subscribe\": true,\n        \"sms_unsubscribe\": true,\n        \"upsms\": true,\n        \"sms_campaign\": true\n      },\n      \"id\": \"5d9a5e3f7b\",\n      \"list_id\": \"4ca5becb8d\",\n      \"signing_enabled\": true,\n      \"sources\": {\n        \"admin\": true,\n        \"api\": true,\n        \"user\": true\n      },\n      \"url\": \"http://yourdomain.com/webhook\"\n    }\n  ]\n}",
         "headers": {
           "Content-Type": "application/json"
         }
@@ -8161,7 +8389,7 @@
       },
       "response": {
         "status": 200,
-        "body": "{\n  \"_links\": [\n    {\n      \"href\": \"href\",\n      \"method\": \"GET\",\n      \"rel\": \"rel\",\n      \"schema\": \"schema\",\n      \"targetSchema\": \"targetSchema\"\n    }\n  ],\n  \"events\": {\n    \"campaign\": true,\n    \"cleaned\": true,\n    \"profile\": true,\n    \"subscribe\": true,\n    \"unsubscribe\": true,\n    \"upemail\": true,\n    \"sms_subscribe\": true,\n    \"sms_unsubscribe\": true,\n    \"upsms\": true,\n    \"sms_campaign\": true\n  },\n  \"id\": \"5d9a5e3f7b\",\n  \"list_id\": \"4ca5becb8d\",\n  \"signing_enabled\": true,\n  \"signing_secret\": \"zI3tsLziqBWhlz6V4PRlGg41u0gdhu7LhYXX4wa0ARM\",\n  \"sources\": {\n    \"admin\": true,\n    \"api\": true,\n    \"user\": true\n  },\n  \"url\": \"http://yourdomain.com/webhook\"\n}",
+        "body": "{\n  \"_links\": [\n    {\n      \"href\": \"href\",\n      \"method\": \"GET\",\n      \"rel\": \"rel\",\n      \"schema\": \"schema\",\n      \"targetSchema\": \"targetSchema\"\n    }\n  ],\n  \"events\": {\n    \"campaign\": true,\n    \"cleaned\": true,\n    \"profile\": true,\n    \"subscribe\": true,\n    \"unsubscribe\": true,\n    \"upemail\": true,\n    \"sms_subscribe\": true,\n    \"sms_unsubscribe\": true,\n    \"upsms\": true,\n    \"sms_campaign\": true\n  },\n  \"id\": \"5d9a5e3f7b\",\n  \"list_id\": \"4ca5becb8d\",\n  \"signing_enabled\": true,\n  \"sources\": {\n    \"admin\": true,\n    \"api\": true,\n    \"user\": true\n  },\n  \"url\": \"http://yourdomain.com/webhook\",\n  \"signing_secret\": \"zI3tsLziqBWhlz6V4PRlGg41u0gdhu7LhYXX4wa0ARM\"\n}",
         "headers": {
           "Content-Type": "application/json"
         }
@@ -8200,7 +8428,7 @@
       },
       "response": {
         "status": 200,
-        "body": "{\n  \"_links\": [\n    {\n      \"href\": \"href\",\n      \"method\": \"GET\",\n      \"rel\": \"rel\",\n      \"schema\": \"schema\",\n      \"targetSchema\": \"targetSchema\"\n    }\n  ],\n  \"events\": {\n    \"campaign\": true,\n    \"cleaned\": true,\n    \"profile\": true,\n    \"subscribe\": true,\n    \"unsubscribe\": true,\n    \"upemail\": true,\n    \"sms_subscribe\": true,\n    \"sms_unsubscribe\": true,\n    \"upsms\": true,\n    \"sms_campaign\": true\n  },\n  \"id\": \"5d9a5e3f7b\",\n  \"list_id\": \"4ca5becb8d\",\n  \"signing_enabled\": true,\n  \"signing_secret\": \"zI3tsLziqBWhlz6V4PRlGg41u0gdhu7LhYXX4wa0ARM\",\n  \"sources\": {\n    \"admin\": true,\n    \"api\": true,\n    \"user\": true\n  },\n  \"url\": \"http://yourdomain.com/webhook\"\n}",
+        "body": "{\n  \"_links\": [\n    {\n      \"href\": \"href\",\n      \"method\": \"GET\",\n      \"rel\": \"rel\",\n      \"schema\": \"schema\",\n      \"targetSchema\": \"targetSchema\"\n    }\n  ],\n  \"events\": {\n    \"campaign\": true,\n    \"cleaned\": true,\n    \"profile\": true,\n    \"subscribe\": true,\n    \"unsubscribe\": true,\n    \"upemail\": true,\n    \"sms_subscribe\": true,\n    \"sms_unsubscribe\": true,\n    \"upsms\": true,\n    \"sms_campaign\": true\n  },\n  \"id\": \"5d9a5e3f7b\",\n  \"list_id\": \"4ca5becb8d\",\n  \"signing_enabled\": true,\n  \"sources\": {\n    \"admin\": true,\n    \"api\": true,\n    \"user\": true\n  },\n  \"url\": \"http://yourdomain.com/webhook\"\n}",
         "headers": {
           "Content-Type": "application/json"
         }
@@ -8278,7 +8506,7 @@
       },
       "response": {
         "status": 200,
-        "body": "{\n  \"_links\": [\n    {\n      \"href\": \"href\",\n      \"method\": \"GET\",\n      \"rel\": \"rel\",\n      \"schema\": \"schema\",\n      \"targetSchema\": \"targetSchema\"\n    }\n  ],\n  \"events\": {\n    \"campaign\": true,\n    \"cleaned\": true,\n    \"profile\": true,\n    \"subscribe\": true,\n    \"unsubscribe\": true,\n    \"upemail\": true,\n    \"sms_subscribe\": true,\n    \"sms_unsubscribe\": true,\n    \"upsms\": true,\n    \"sms_campaign\": true\n  },\n  \"id\": \"5d9a5e3f7b\",\n  \"list_id\": \"4ca5becb8d\",\n  \"signing_enabled\": true,\n  \"signing_secret\": \"zI3tsLziqBWhlz6V4PRlGg41u0gdhu7LhYXX4wa0ARM\",\n  \"sources\": {\n    \"admin\": true,\n    \"api\": true,\n    \"user\": true\n  },\n  \"url\": \"http://yourdomain.com/webhook\"\n}",
+        "body": "{\n  \"_links\": [\n    {\n      \"href\": \"href\",\n      \"method\": \"GET\",\n      \"rel\": \"rel\",\n      \"schema\": \"schema\",\n      \"targetSchema\": \"targetSchema\"\n    }\n  ],\n  \"events\": {\n    \"campaign\": true,\n    \"cleaned\": true,\n    \"profile\": true,\n    \"subscribe\": true,\n    \"unsubscribe\": true,\n    \"upemail\": true,\n    \"sms_subscribe\": true,\n    \"sms_unsubscribe\": true,\n    \"upsms\": true,\n    \"sms_campaign\": true\n  },\n  \"id\": \"5d9a5e3f7b\",\n  \"list_id\": \"4ca5becb8d\",\n  \"signing_enabled\": true,\n  \"sources\": {\n    \"admin\": true,\n    \"api\": true,\n    \"user\": true\n  },\n  \"url\": \"http://yourdomain.com/webhook\"\n}",
         "headers": {
           "Content-Type": "application/json"
         }
@@ -10701,6 +10929,6 @@
     }
   ],
   "meta": {
-    "total": 291
+    "total": 297
   }
 }
